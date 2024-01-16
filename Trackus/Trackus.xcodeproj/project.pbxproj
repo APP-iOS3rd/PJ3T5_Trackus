@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DC2B56F275003761C1 /* MyProfileView.swift */; };
+		61F117DF2B56F283003761C1 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DE2B56F283003761C1 /* ReportView.swift */; };
+		61F117E12B56F291003761C1 /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E02B56F291003761C1 /* RunningView.swift */; };
+		61F117E32B56F29A003761C1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E22B56F29A003761C1 /* Login.swift */; };
+		61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E42B56F2B9003761C1 /* LoginViewModel.swift */; };
+		61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E62B56F2C6003761C1 /* RunningViewModel.swift */; };
+		61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E82B56F2D1003761C1 /* ReportViewModel.swift */; };
+		61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */; };
+		61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EE2B56F2FA003761C1 /* Color+.swift */; };
+		61F117F12B56F7F6003761C1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* CustomButton.swift */; };
 		82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */; };
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
@@ -14,6 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61F117DC2B56F275003761C1 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		61F117DE2B56F283003761C1 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		61F117E02B56F291003761C1 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
+		61F117E22B56F29A003761C1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		61F117E42B56F2B9003761C1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		61F117E62B56F2C6003761C1 /* RunningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewModel.swift; sourceTree = "<group>"; };
+		61F117E82B56F2D1003761C1 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		61F117EE2B56F2FA003761C1 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		61F117F02B56F7F6003761C1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		82C1C5FC2B56E6AA00EBDAEE /* Trackus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackusApp.swift; sourceTree = "<group>"; };
 		82C1C6012B56E6AA00EBDAEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +52,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61F117C42B56EDD9003761C1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				61F117D62B56F10D003761C1 /* Commons */,
+				61F117D42B56EFCD003761C1 /* Root */,
+				61F117CB2B56EF1A003761C1 /* MyProfile */,
+				61F117C92B56EF00003761C1 /* Report */,
+				61F117C82B56EED9003761C1 /* Running */,
+				61F117C62B56EEB5003761C1 /* Login */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		61F117C52B56EE5C003761C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				82C1C6052B56E6AA00EBDAEE /* Preview Content */,
+				82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		61F117C62B56EEB5003761C1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				61F117D32B56EF99003761C1 /* ViewModel */,
+				61F117D22B56EF96003761C1 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		61F117C82B56EED9003761C1 /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				61F117D12B56EF8C003761C1 /* VIewModel */,
+				61F117D02B56EF8A003761C1 /* View */,
+			);
+			path = Running;
+			sourceTree = "<group>";
+		};
+		61F117C92B56EF00003761C1 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				61F117CF2B56EF85003761C1 /* VIewModel */,
+				61F117CE2B56EF81003761C1 /* View */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		61F117CB2B56EF1A003761C1 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				61F117CD2B56EF7B003761C1 /* ViewModel */,
+				61F117CC2B56EF76003761C1 /* View */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		61F117CC2B56EF76003761C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61F117DC2B56F275003761C1 /* MyProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61F117CD2B56EF7B003761C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		61F117CE2B56EF81003761C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61F117DE2B56F283003761C1 /* ReportView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61F117CF2B56EF85003761C1 /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61F117E82B56F2D1003761C1 /* ReportViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		61F117D02B56EF8A003761C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61F117E02B56F291003761C1 /* RunningView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61F117D12B56EF8C003761C1 /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61F117E62B56F2C6003761C1 /* RunningViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		61F117D22B56EF96003761C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				61F117E22B56F29A003761C1 /* Login.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		61F117D32B56EF99003761C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				61F117E42B56F2B9003761C1 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		61F117D42B56EFCD003761C1 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */,
+				82C1C6012B56E6AA00EBDAEE /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		61F117D62B56F10D003761C1 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				61F117D82B56F1C5003761C1 /* Items */,
+				61F117D72B56F1BE003761C1 /* Extensions */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		61F117D72B56F1BE003761C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61F117EE2B56F2FA003761C1 /* Color+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61F117D82B56F1C5003761C1 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				61F117F02B56F7F6003761C1 /* CustomButton.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		82C1C5F32B56E6AA00EBDAEE = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +227,8 @@
 		82C1C5FE2B56E6AA00EBDAEE /* Trackus */ = {
 			isa = PBXGroup;
 			children = (
-				82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */,
-				82C1C6012B56E6AA00EBDAEE /* ContentView.swift */,
-				82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */,
-				82C1C6052B56E6AA00EBDAEE /* Preview Content */,
+				61F117C52B56EE5C003761C1 /* Resources */,
+				61F117C42B56EDD9003761C1 /* Sources */,
 			);
 			path = Trackus;
 			sourceTree = "<group>";
@@ -137,8 +311,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */,
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
+				61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */,
+				61F117E12B56F291003761C1 /* RunningView.swift in Sources */,
+				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
+				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
+				61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */,
+				61F117DF2B56F283003761C1 /* ReportView.swift in Sources */,
+				61F117F12B56F7F6003761C1 /* CustomButton.swift in Sources */,
 				82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */,
+				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
+				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
