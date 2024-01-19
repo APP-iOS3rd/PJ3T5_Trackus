@@ -8,16 +8,46 @@
 import SwiftUI
 
 struct TUCanvas {
-    // 여러가지 스타일의 캔버스뷰 추가예정
-    struct ContentCanvasView<Content: View>: View {
+    enum TUCanvasStyle {
+        case content
+        case background
+    }
+    /**
+     ## TUCanvas
+     TUCanvasStyle 열거형 타입을 받아서 타입에 맞는 뷰를 반환합니다.
+     
+     ## Parameter
+     style: TUCanvasStyle에 정의된 view 타입
+     content: View를 반환하는 타입
+     
+     ## 사용예시
+     TUCanvas.CustomCanvasView(style:TUCanvasStyle, content: () -> View)
+     */
+    struct CustomCanvasView<Content: View>: View {
+        let style: TUCanvasStyle
         let content: Content
         var body: some View {
-            content
-                .modifier(TUCanvasModifier())
+            // style별로 다른 캔버스를 나타냄
+            switch style {
+            case .content:
+                content
+                    .modifier(TUCanvasModifier())
+            case .background:
+                VStack {
+                    ZStack {
+                        TUColor.background
+                            .edgesIgnoringSafeArea(.all)
+                        VStack {
+                            content
+                        }
+                    }
+                }
+            }
         }
         
-        init(@ViewBuilder content: () -> Content) {
+        init(style: TUCanvasStyle = .background, @ViewBuilder content: () -> Content) {
             self.content = content()
+            self.style = style
         }
     }
 }
