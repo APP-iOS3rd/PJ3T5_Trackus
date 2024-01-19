@@ -17,6 +17,7 @@
 		61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */; };
 		61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EE2B56F2FA003761C1 /* Color+.swift */; };
 		61F117F12B56F7F6003761C1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* CustomButton.swift */; };
+		61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1181E2B59711E003761C1 /* TUTextField.swift */; };
 		82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */; };
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		61F117EE2B56F2FA003761C1 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		61F117F02B56F7F6003761C1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		61F1181E2B59711E003761C1 /* TUTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUTextField.swift; sourceTree = "<group>"; };
 		82C1C5FC2B56E6AA00EBDAEE /* Trackus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackusApp.swift; sourceTree = "<group>"; };
 		82C1C6012B56E6AA00EBDAEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,7 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				61F117F02B56F7F6003761C1 /* CustomButton.swift */,
+
 				9630DBB12B5A137C00727635 /* TUColor.swift */,
+
+				61F1181E2B59711E003761C1 /* TUTextField.swift */,
+
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */,
 				61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */,
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
 				61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */,
@@ -468,6 +475,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +505,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
