@@ -22,6 +22,7 @@
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
 		82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */; };
+		9630DBB22B5A137C00727635 /* TUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBB12B5A137C00727635 /* TUColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		82C1C6012B56E6AA00EBDAEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9630DBB12B5A137C00727635 /* TUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				61F117F02B56F7F6003761C1 /* CustomButton.swift */,
+
+				9630DBB12B5A137C00727635 /* TUColor.swift */,
+
 				61F1181E2B59711E003761C1 /* TUTextField.swift */,
+
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
 				61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */,
 				61F117E12B56F291003761C1 /* RunningView.swift in Sources */,
+				9630DBB22B5A137C00727635 /* TUColor.swift in Sources */,
 				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
 				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
 				61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */,
