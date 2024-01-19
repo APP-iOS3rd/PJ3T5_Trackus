@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 화면을 나누기 위해서 임시로 설정
+    let isLogin = false
     var body: some View {
-        TUCanvas.CustomCanvasView(style: .background) {
-            TUCanvas.CustomCanvasView(style: .content) {
-                Text("안녕 하세용")
-                    .font(.title)
-                    .foregroundStyle(.white)
+        Group {
+            if isLogin {
+                Login()
+            } else {
+                MainTabView()
             }
         }
     }

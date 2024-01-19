@@ -15,6 +15,8 @@ struct TUColor {
     static let box = Color(hex: 0x212121)
     static let border = Color(hex: 0x969696)
     static let background = Color(hex: 0x111111)
+    static let tabColor = Color(hex: 0x161616)
+    static let tab = UIColor(TUColor.tabColor)
 }
 
 extension Color {
