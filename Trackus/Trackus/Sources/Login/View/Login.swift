@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Login: View {
+    
+    @State var check: Bool = true
     var body: some View {
         VStack{
             // 로고 부분
@@ -24,12 +26,20 @@ struct Login: View {
             TUButton(image: Image(systemName: "applelogo"), buttonText: "Apple로 시작하기", buttonColor: .black, fontColor: .white) {
                 
             }
+            
         }
         .padding(20)
         .background(.black)
     }
 }
 
+struct SignUpView: View {
+    var body: some View {
+        VStack
+    }
+}
+
 #Preview {
     Login()
+    SignUpView()
 }
