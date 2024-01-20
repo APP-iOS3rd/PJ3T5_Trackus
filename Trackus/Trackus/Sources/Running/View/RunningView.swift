@@ -9,7 +9,75 @@ import SwiftUI
 
 struct RunningView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TUCanvas.CustomCanvasView {
+            ScrollView {
+                VStack {
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                    
+                    TUCanvas.CustomCanvasView(style: .content) {
+                        Text("Hi")
+                    }
+                }.padding(20)
+            }
+        }
     }
 }
 
