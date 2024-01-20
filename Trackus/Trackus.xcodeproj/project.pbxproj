@@ -21,7 +21,7 @@
 		61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1181E2B59711E003761C1 /* TUTextField.swift */; };
 		8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFDE2B5A10EE009FD48A /* Constants.swift */; };
 		8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE02B5A16BA009FD48A /* TUCanvas.swift */; };
-		8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */; };
+		8298CFE32B5A17F5009FD48A /* CanvasModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE22B5A17F5009FD48A /* CanvasModifier.swift */; };
 		8298CFE92B5A4902009FD48A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE82B5A4902009FD48A /* MainTabView.swift */; };
 		8298CFEC2B5A5595009FD48A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8298CFEB2B5A5595009FD48A /* FirebaseAppCheck */; };
 		8298CFEE2B5A5595009FD48A /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8298CFED2B5A5595009FD48A /* FirebaseAppDistribution-Beta */; };
@@ -74,7 +74,7 @@
 		61F1181E2B59711E003761C1 /* TUTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUTextField.swift; sourceTree = "<group>"; };
 		8298CFDE2B5A10EE009FD48A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8298CFE02B5A16BA009FD48A /* TUCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvas.swift; sourceTree = "<group>"; };
-		8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvasModifier.swift; sourceTree = "<group>"; };
+		8298CFE22B5A17F5009FD48A /* CanvasModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasModifier.swift; sourceTree = "<group>"; };
 		8298CFE82B5A4902009FD48A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		8298D0172B5A5740009FD48A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82B0274A2B5C0C6900CFADDC /* RunningRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningRecordView.swift; sourceTree = "<group>"; };
@@ -296,7 +296,7 @@
 		8298CFD92B5A0CBD009FD48A /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */,
+				8298CFE22B5A17F5009FD48A /* CanvasModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -453,7 +453,7 @@
 				61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */,
 				82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */,
 				8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */,
-				8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */,
+				8298CFE32B5A17F5009FD48A /* CanvasModifier.swift in Sources */,
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
 				2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */,
 				82B0275F2B5C356A00CFADDC /* RunningResultView.swift in Sources */,
