@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct RunningRecordView: View {
-    @State private var isFullScreen = false
-    @GestureState var press = false
     @State private var isShowingResultView = false
+    @State private var isFullScreen = false
+    @State var isShowingPopup = false
+    @GestureState var press = false
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.gray
@@ -27,16 +30,19 @@ struct RunningRecordView: View {
                                     .font(.title)
                                     .foregroundColor(.white)
                                 HStack {
-                                    Image(systemName: "stop.circle")
-                                        .font(.system(size: 116))
-                                        .foregroundColor(.white)
-                                        .gesture(
-                                            LongPressGesture(minimumDuration: 2)
-                                                .updating($press) { currentState, gestureState, transaction in
-                                                    gestureState = currentState
-                                                }
-                                                .onEnded(stopButtonPressed)
-                                        )
+                                    Button(action: {}, label: {
+                                        Image(systemName: "stop.circle")
+                                            .font(.system(size: 116))
+                                            .foregroundColor(.white)
+                                        
+                                    }) // LongPressGesture를 앞에 추가
+                                    .simultaneousGesture(LongPressGesture(minimumDuration: 2)
+                                        .updating($press) { currentState, gestureState, transaction in
+                                            gestureState = currentState
+                                        }
+                                        .onEnded(stopButtonLongPressed))
+                                    .simultaneousGesture(TapGesture().onEnded(stopButtonPressed))
+                                    
                                     
                                     Spacer()
                                     Button(action: pauseButtonPressed) {
@@ -65,6 +71,24 @@ struct RunningRecordView: View {
             
             
         }
+        .popup(isPresented: $isShowingPopup) {
+            HStack {
+                Image(systemName: "hand.tap")
+                    .foregroundColor(.white)
+                    .font(.title)
+                Text("일시정지 버튼을 2초이상 탭하면 기록이 중지됩니다!")
+                    .foregroundColor(.white)
+                    .padding()
+            }
+            .frame(maxWidth: .infinity)
+            .background(.purple)
+        } customize: {
+            $0
+                .type(.floater())
+                .position(.top)
+                .autohideIn(1.5)
+        }
+ 
         .navigationBarBackButtonHidden(true)
     }
     
@@ -75,7 +99,12 @@ struct RunningRecordView: View {
         }
     }
     
-    func stopButtonPressed(value: Bool) {
+    func stopButtonPressed() {
+        print("stop button pressed!")
+        isShowingPopup = true
+    }
+    
+    func stopButtonLongPressed(value: Bool) {
         isShowingResultView = true
     }
 }

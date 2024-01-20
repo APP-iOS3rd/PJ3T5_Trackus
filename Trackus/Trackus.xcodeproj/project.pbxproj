@@ -51,6 +51,7 @@
 		82B0275B2B5C1FE500CFADDC /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0275A2B5C1FE500CFADDC /* UIScreen+.swift */; };
 		82B0275D2B5C304900CFADDC /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0275C2B5C304900CFADDC /* HapticManager.swift */; };
 		82B0275F2B5C356A00CFADDC /* RunningResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0275E2B5C356A00CFADDC /* RunningResultView.swift */; };
+		82B027622B5C3AE500CFADDC /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 82B027612B5C3AE500CFADDC /* PopupView */; };
 		82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */; };
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 				8298D0142B5A5595009FD48A /* FirebaseStorage in Frameworks */,
 				8298D00C2B5A5595009FD48A /* FirebaseMessaging in Frameworks */,
 				8298CFF02B5A5595009FD48A /* FirebaseAuth in Frameworks */,
+				82B027622B5C3AE500CFADDC /* PopupView in Frameworks */,
 				8298D0042B5A5595009FD48A /* FirebaseFunctionsCombine-Community in Frameworks */,
 				8298D00A2B5A5595009FD48A /* FirebaseInstallations in Frameworks */,
 				8298CFFC2B5A5595009FD48A /* FirebaseFirestore in Frameworks */,
@@ -374,6 +376,7 @@
 				8298D0112B5A5595009FD48A /* FirebaseRemoteConfigSwift */,
 				8298D0132B5A5595009FD48A /* FirebaseStorage */,
 				8298D0152B5A5595009FD48A /* FirebaseStorageCombine-Community */,
+				82B027612B5C3AE500CFADDC /* PopupView */,
 			);
 			productName = Trackus;
 			productReference = 82C1C5FC2B56E6AA00EBDAEE /* Trackus.app */;
@@ -405,6 +408,7 @@
 			mainGroup = 82C1C5F32B56E6AA00EBDAEE;
 			packageReferences = (
 				8298CFEA2B5A5595009FD48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				82B027602B5C3AE500CFADDC /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 82C1C5FD2B56E6AA00EBDAEE /* Products */;
 			projectDirPath = "";
@@ -675,6 +679,14 @@
 				minimumVersion = 10.20.0;
 			};
 		};
+		82B027602B5C3AE500CFADDC /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -787,6 +799,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8298CFEA2B5A5595009FD48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		82B027612B5C3AE500CFADDC /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82B027602B5C3AE500CFADDC /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
