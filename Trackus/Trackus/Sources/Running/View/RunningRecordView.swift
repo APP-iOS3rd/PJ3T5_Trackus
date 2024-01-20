@@ -14,6 +14,10 @@ struct RunningRecordView: View {
     @State var isShowingPopup = false
     @GestureState var press = false
     
+    init() {
+        SoundSetting.instance.playSound(sound: .recordStart)
+    }
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.gray
@@ -43,9 +47,8 @@ struct RunningRecordView: View {
                                         .onEnded(stopButtonLongPressed))
                                     .simultaneousGesture(TapGesture().onEnded(stopButtonPressed))
                                     
-                                    
                                     Spacer()
-                                    Button(action: pauseButtonPressed) {
+                                    Button(action: playButtonPressed) {
                                         Image(systemName: "play.circle")
                                             .font(.system(size: 116))
                                             .foregroundColor(.white)
@@ -86,25 +89,37 @@ struct RunningRecordView: View {
             $0
                 .type(.floater())
                 .position(.top)
-                .autohideIn(1.5)
+                .autohideIn(2)
         }
- 
+        
         .navigationBarBackButtonHidden(true)
     }
     
+    // 일시중지
     func pauseButtonPressed() {
         withAnimation {
-            isFullScreen.toggle()
-            HapticManager.instance.impact(style: .medium)
+            isFullScreen = true
         }
+        HapticManager.instance.impact(style: .medium)
+        SoundSetting.instance.playSound(sound: .recordStop)
     }
     
+    // 기록시작
+    func playButtonPressed() {
+        withAnimation {
+            isFullScreen = false
+        }
+        HapticManager.instance.impact(style: .medium)
+    }
+    
+    // 종료버튼 탭
     func stopButtonPressed() {
-        print("stop button pressed!")
         isShowingPopup = true
     }
     
+    // 종료버튼 롱프레스
     func stopButtonLongPressed(value: Bool) {
+        HapticManager.instance.impact(style: .heavy)
         isShowingResultView = true
     }
 }

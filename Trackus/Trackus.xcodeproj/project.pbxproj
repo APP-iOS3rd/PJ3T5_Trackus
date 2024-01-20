@@ -52,6 +52,9 @@
 		82B0275D2B5C304900CFADDC /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0275C2B5C304900CFADDC /* HapticManager.swift */; };
 		82B0275F2B5C356A00CFADDC /* RunningResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B0275E2B5C356A00CFADDC /* RunningResultView.swift */; };
 		82B027622B5C3AE500CFADDC /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 82B027612B5C3AE500CFADDC /* PopupView */; };
+		82B027642B5C41BD00CFADDC /* SoundSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B027632B5C41BD00CFADDC /* SoundSetting.swift */; };
+		82B027682B5C43A000CFADDC /* recordStop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 82B027662B5C43A000CFADDC /* recordStop.m4a */; };
+		82B027692B5C43A000CFADDC /* recordStart.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 82B027672B5C43A000CFADDC /* recordStart.m4a */; };
 		82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */; };
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
@@ -83,6 +86,9 @@
 		82B0275A2B5C1FE500CFADDC /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
 		82B0275C2B5C304900CFADDC /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		82B0275E2B5C356A00CFADDC /* RunningResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningResultView.swift; sourceTree = "<group>"; };
+		82B027632B5C41BD00CFADDC /* SoundSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSetting.swift; sourceTree = "<group>"; };
+		82B027662B5C43A000CFADDC /* recordStop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recordStop.m4a; sourceTree = "<group>"; };
+		82B027672B5C43A000CFADDC /* recordStart.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recordStart.m4a; sourceTree = "<group>"; };
 		82C1C5FC2B56E6AA00EBDAEE /* Trackus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trackus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackusApp.swift; sourceTree = "<group>"; };
 		82C1C6012B56E6AA00EBDAEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		61F117C52B56EE5C003761C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				82B027652B5C436100CFADDC /* Sounds */,
 				82C1C6052B56E6AA00EBDAEE /* Preview Content */,
 				82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */,
 			);
@@ -268,6 +275,8 @@
 				61F117D82B56F1C5003761C1 /* Items */,
 				61F117D72B56F1BE003761C1 /* Extensions */,
 				8298CFDE2B5A10EE009FD48A /* Constants.swift */,
+				82B027632B5C41BD00CFADDC /* SoundSetting.swift */,
+				82B0275C2B5C304900CFADDC /* HapticManager.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -278,7 +287,6 @@
 				61F117EE2B56F2FA003761C1 /* Color+.swift */,
 				FE98EA162B597623004CBFD1 /* ViewPadding.swift */,
 				82B0275A2B5C1FE500CFADDC /* UIScreen+.swift */,
-				82B0275C2B5C304900CFADDC /* HapticManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +309,15 @@
 				8298CFE22B5A17F5009FD48A /* CanvasModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		82B027652B5C436100CFADDC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82B027672B5C43A000CFADDC /* recordStart.m4a */,
+				82B027662B5C43A000CFADDC /* recordStop.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		82C1C5F32B56E6AA00EBDAEE = {
@@ -425,7 +442,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */,
+				82B027682B5C43A000CFADDC /* recordStop.m4a in Resources */,
 				82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */,
+				82B027692B5C43A000CFADDC /* recordStart.m4a in Resources */,
 				8298D0182B5A5740009FD48A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +480,7 @@
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
 				2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */,
 				82B0275F2B5C356A00CFADDC /* RunningResultView.swift in Sources */,
+				82B027642B5C41BD00CFADDC /* SoundSetting.swift in Sources */,
 				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
