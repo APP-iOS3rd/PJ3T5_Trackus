@@ -10,7 +10,7 @@ import SwiftUI
 struct TUCanvasModifier: ViewModifier {
     // 컬러가 정해지면 변경예정
     // 기본색상 설정
-    let color: Color = .gray
+    let color: Color = TUColor.box
     
     func body(content: Content) -> some View {
         content

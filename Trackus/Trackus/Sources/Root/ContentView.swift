@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 화면을 나누기 위해서 임시로 설정
+    let isLogin = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if isLogin {
+                Login()
+            } else {
+                MainTabView()
+            }
         }
-        .padding()
     }
 }
 
