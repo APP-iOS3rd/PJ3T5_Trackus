@@ -12,70 +12,13 @@ struct RunningView: View {
         TUCanvas.CustomCanvasView {
             ScrollView {
                 VStack {
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
-                    
-                    TUCanvas.CustomCanvasView(style: .content) {
-                        Text("Hi")
-                    }
+                    NavigationLink("러닝 시작!", value: "RunningRecord")
                 }.padding(20)
+            }
+            .navigationDestination(for: String.self) { destination in
+                if destination == "RunningRecord" {
+                    RunningRecordView()
+                }
             }
         }
     }

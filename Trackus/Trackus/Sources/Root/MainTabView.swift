@@ -13,6 +13,7 @@ struct MainTabView: View {
     init() {
         UITabBar.appearance().backgroundColor = TUColor.tab
     }
+    
     var body: some View {
         NavigationStack {
             TabView(selection: $selectedIndex) {
