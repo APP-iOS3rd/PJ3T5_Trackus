@@ -10,7 +10,7 @@ import SwiftUI
 struct RunningResultView: View {
     var body: some View {
         TUCanvas.CustomCanvasView {
-            Text("러닝 결과화면")
+            Text("러닝 결과!!!")
         }
     }
 }
