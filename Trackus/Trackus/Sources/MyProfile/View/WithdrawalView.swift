@@ -68,7 +68,14 @@ struct WithdrawalView: View {
                             .font(.headline)
                             .foregroundColor(TUColor.main)
                             .padding(.horizontal)
-                        
+                        Spacer()
+                        Image(systemName: isAgreed ? "largecircle.fill.circle" : "circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(TUColor.main)
+                            .onTapGesture {
+                                isAgreed.toggle()
+                            }
                     }
                     TUButton(buttonText: "회원탈퇴") {
                         // 나중에 동작 추가하기
