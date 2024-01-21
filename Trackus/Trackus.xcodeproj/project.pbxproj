@@ -59,6 +59,7 @@
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
 		82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */; };
+		82D0BCB62B5D61E4006A66B3 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 82D0BCB52B5D61E4006A66B3 /* MapboxMaps */; };
 		9630DBB22B5A137C00727635 /* TUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBB12B5A137C00727635 /* TUColor.swift */; };
 		FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98EA162B597623004CBFD1 /* ViewPadding.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		82C1C6012B56E6AA00EBDAEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		82D0BCB32B5D619A006A66B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9630DBB12B5A137C00727635 /* TUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUColor.swift; sourceTree = "<group>"; };
 		FE98EA162B597623004CBFD1 /* ViewPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				82B027622B5C3AE500CFADDC /* PopupView in Frameworks */,
 				8298D0042B5A5595009FD48A /* FirebaseFunctionsCombine-Community in Frameworks */,
 				8298D00A2B5A5595009FD48A /* FirebaseInstallations in Frameworks */,
+				82D0BCB62B5D61E4006A66B3 /* MapboxMaps in Frameworks */,
 				8298CFFC2B5A5595009FD48A /* FirebaseFirestore in Frameworks */,
 				8298CFF42B5A5595009FD48A /* FirebaseCrashlytics in Frameworks */,
 				8298D0122B5A5595009FD48A /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -339,6 +342,7 @@
 		82C1C5FE2B56E6AA00EBDAEE /* Trackus */ = {
 			isa = PBXGroup;
 			children = (
+				82D0BCB32B5D619A006A66B3 /* Info.plist */,
 				8298D0172B5A5740009FD48A /* GoogleService-Info.plist */,
 				61F117C52B56EE5C003761C1 /* Resources */,
 				61F117C42B56EDD9003761C1 /* Sources */,
@@ -394,6 +398,7 @@
 				8298D0132B5A5595009FD48A /* FirebaseStorage */,
 				8298D0152B5A5595009FD48A /* FirebaseStorageCombine-Community */,
 				82B027612B5C3AE500CFADDC /* PopupView */,
+				82D0BCB52B5D61E4006A66B3 /* MapboxMaps */,
 			);
 			productName = Trackus;
 			productReference = 82C1C5FC2B56E6AA00EBDAEE /* Trackus.app */;
@@ -426,6 +431,7 @@
 			packageReferences = (
 				8298CFEA2B5A5595009FD48A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				82B027602B5C3AE500CFADDC /* XCRemoteSwiftPackageReference "PopupView" */,
+				82D0BCB42B5D61E4006A66B3 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			productRefGroup = 82C1C5FD2B56E6AA00EBDAEE /* Products */;
 			projectDirPath = "";
@@ -618,6 +624,7 @@
 				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trackus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -648,6 +655,7 @@
 				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trackus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -705,6 +713,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.8.3;
+			};
+		};
+		82D0BCB42B5D61E4006A66B3 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -824,6 +840,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 82B027602B5C3AE500CFADDC /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		82D0BCB52B5D61E4006A66B3 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82D0BCB42B5D61E4006A66B3 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
