@@ -88,7 +88,6 @@ struct ProfileInfo: View {
                 .resizable()
                 .frame(width: 50, height: 50)
                 .padding(.trailing, 8)
-                .clipShape(Circle())
             
             // 이름
             VStack(alignment: .leading, spacing: 4) {
