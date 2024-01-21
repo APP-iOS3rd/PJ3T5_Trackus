@@ -22,9 +22,7 @@ struct RunningRecordView: View {
         
         ZStack(alignment: .topLeading) {
             
-            VStack {
-                Text("지도하자 이제")
-            }
+            LiveRecordedRunningView()
             .frame(height: UIScreen.screenHeight * 0.4)
             .edgesIgnoringSafeArea(.all)
             

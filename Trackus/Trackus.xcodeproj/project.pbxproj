@@ -60,6 +60,7 @@
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
 		82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */; };
 		82D0BCB62B5D61E4006A66B3 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 82D0BCB52B5D61E4006A66B3 /* MapboxMaps */; };
+		82D0BCB82B5D63AA006A66B3 /* LiveRecordedRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */; };
 		9630DBB22B5A137C00727635 /* TUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBB12B5A137C00727635 /* TUColor.swift */; };
 		FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98EA162B597623004CBFD1 /* ViewPadding.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82D0BCB32B5D619A006A66B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRecordedRunningView.swift; sourceTree = "<group>"; };
 		9630DBB12B5A137C00727635 /* TUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUColor.swift; sourceTree = "<group>"; };
 		FE98EA162B597623004CBFD1 /* ViewPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +235,7 @@
 				82B0274A2B5C0C6900CFADDC /* RunningRecordView.swift */,
 				82B0275E2B5C356A00CFADDC /* RunningResultView.swift */,
 				82B027582B5C1D0D00CFADDC /* BottomSheet.swift */,
+				82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				8298CFE32B5A17F5009FD48A /* CanvasModifier.swift in Sources */,
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
 				2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */,
+				82D0BCB82B5D63AA006A66B3 /* LiveRecordedRunningView.swift in Sources */,
 				82B0275F2B5C356A00CFADDC /* RunningResultView.swift in Sources */,
 				82B027642B5C41BD00CFADDC /* SoundSetting.swift in Sources */,
 				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
