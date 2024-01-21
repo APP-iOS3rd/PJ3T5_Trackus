@@ -220,8 +220,7 @@ struct StepperRotation: View {
     }
 }
 
-struct MyProfileChangeView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyProfileChangeView()
-    }
+
+#Preview {
+    MyProfileChangeView()
 }

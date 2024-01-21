@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyProfileView: View {
+    @State private var isSettingsActive: Bool = false
     var body: some View {
         NavigationView {
             VStack {
@@ -23,8 +24,12 @@ struct MyProfileView: View {
                     Image(systemName: "gear")
                         .font(.system(size: 20))
                         .padding()
+                        .onTapGesture {
+                            // 톱니바퀴 이미지를 클릭했을 때 설정화면으로 이동
+                            isSettingsActive = true
+                        }
+                        .background(NavigationLink("", destination: SettingsView(), isActive: $isSettingsActive))
                 }
-                
                 // 프로필 정보
                 ProfileInfo()
                 
@@ -79,7 +84,17 @@ struct MyProfileView: View {
         }
     }
 }
-
+    
+class NavigationManager: ObservableObject {
+    static let shared = NavigationManager()
+    
+    @Published var isSettingsActive: Bool = false
+    
+    func navigateToSettings() {
+        isSettingsActive = true
+    }
+}
+    
 struct ProfileInfo: View {
     var body: some View {
         HStack {
