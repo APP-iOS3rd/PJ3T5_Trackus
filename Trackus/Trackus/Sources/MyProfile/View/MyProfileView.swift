@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MyProfileView: View {
     @State private var isSettingsActive: Bool = false
+    @State private var isFAQActive: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -66,7 +68,12 @@ struct MyProfileView: View {
                     Text("고객지원")
                         .font(.headline)
                         .padding(.horizontal)
-                    ListSettingsItem(title: "자주묻는 질문Q&A")
+                    NavigationLink(destination: FAQView(), isActive: $isFAQActive) {
+                        ListSettingsItem(title: "자주묻는 질문 Q&A")
+                            .onTapGesture {
+                                isFAQActive = true
+                            }
+                    }
                     ListSettingsItem(title: "문의하기")
                     Divider()
                     
