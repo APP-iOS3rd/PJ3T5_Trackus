@@ -9,6 +9,7 @@ import SwiftUI
 struct WithdrawalView: View {
     @State private var text: String = ""
     @State private var isAgreed: Bool = false
+    @State private var showWithdrawalAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -63,7 +64,6 @@ struct WithdrawalView: View {
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading) // 큰 크기로 조절
                     HStack {
-                        
                         Text("안내 사항 확인 후 탈퇴에 동의합니다.")
                             .font(.headline)
                             .foregroundColor(TUColor.main)
@@ -77,10 +77,22 @@ struct WithdrawalView: View {
                                 isAgreed.toggle()
                             }
                     }
+
                     TUButton(buttonText: "회원탈퇴") {
-                        // 나중에 동작 추가하기
+                        showWithdrawalAlert = true
                     }
-                    
+                    .foregroundColor(TUColor.border)
+                    .padding(.horizontal)
+                    .alert(isPresented: $showWithdrawalAlert) {
+                        Alert(
+                            title: Text("알림"),
+                            message: Text("정말 탈퇴를 진행하시겠습니까? 트랙어스 서비스의 모든 데이터가 삭제됩니다."),
+                            primaryButton: .cancel(),
+                            secondaryButton: .destructive(Text("ok"), action: {
+                                // 회원 탈퇴 동작 추가하기
+                            })
+                        )
+                    }
                 }
                 .padding(.top, 20)
                 Spacer()
@@ -91,6 +103,7 @@ struct WithdrawalView: View {
         }
     }
 }
+
 
 #Preview {
     WithdrawalView()
