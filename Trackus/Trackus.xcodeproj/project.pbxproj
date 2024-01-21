@@ -17,9 +17,15 @@
 		61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E82B56F2D1003761C1 /* ReportViewModel.swift */; };
 		61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */; };
 		61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EE2B56F2FA003761C1 /* Color+.swift */; };
-
-		61F117F12B56F7F6003761C1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* CustomButton.swift */; };
+		61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* TUButton.swift */; };
 		61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1181E2B59711E003761C1 /* TUTextField.swift */; };
+		61F1184D2B5DA05D003761C1 /* AgeStatsTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */; };
+		61F1184E2B5DA05D003761C1 /* StatsTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118482B5DA05C003761C1 /* StatsTabbedView.swift */; };
+		61F1184F2B5DA05D003761C1 /* MonthRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */; };
+		61F118502B5DA05D003761C1 /* YearRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */; };
+		61F118512B5DA05D003761C1 /* DailyRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */; };
+		61F118522B5DA05D003761C1 /* MonthDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */; };
+		61F118542B5DA07A003761C1 /* MyStatsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */; };
 		8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFDE2B5A10EE009FD48A /* Constants.swift */; };
 		8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE02B5A16BA009FD48A /* TUCanvas.swift */; };
 		8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */; };
@@ -47,14 +53,6 @@
 		8298D0142B5A5595009FD48A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8298D0132B5A5595009FD48A /* FirebaseStorage */; };
 		8298D0162B5A5595009FD48A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8298D0152B5A5595009FD48A /* FirebaseStorageCombine-Community */; };
 		8298D0182B5A5740009FD48A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8298D0172B5A5740009FD48A /* GoogleService-Info.plist */; };
-
-		61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* TUButton.swift */; };
-		8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFDE2B5A10EE009FD48A /* Constants.swift */; };
-		8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE02B5A16BA009FD48A /* TUCanvas.swift */; };
-		8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */; };
-
-		61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1181E2B59711E003761C1 /* TUTextField.swift */; };
-
 		82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C5FF2B56E6AA00EBDAEE /* TrackusApp.swift */; };
 		82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1C6012B56E6AA00EBDAEE /* ContentView.swift */; };
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
@@ -74,13 +72,15 @@
 		61F117E82B56F2D1003761C1 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		61F117EE2B56F2FA003761C1 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
-
-		61F117F02B56F7F6003761C1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		61F1181E2B59711E003761C1 /* TUTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUTextField.swift; sourceTree = "<group>"; };
-
 		61F117F02B56F7F6003761C1 /* TUButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUButton.swift; sourceTree = "<group>"; };
-
-
+		61F1181E2B59711E003761C1 /* TUTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUTextField.swift; sourceTree = "<group>"; };
+		61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeStatsTabbedView.swift; sourceTree = "<group>"; };
+		61F118482B5DA05C003761C1 /* StatsTabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTabbedView.swift; sourceTree = "<group>"; };
+		61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthRunningStatsView.swift; sourceTree = "<group>"; };
+		61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearRunningStatsView.swift; sourceTree = "<group>"; };
+		61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRunningStatsView.swift; sourceTree = "<group>"; };
+		61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
+		61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
 		8298CFDE2B5A10EE009FD48A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8298CFE02B5A16BA009FD48A /* TUCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvas.swift; sourceTree = "<group>"; };
 		8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvasModifier.swift; sourceTree = "<group>"; };
@@ -206,6 +206,13 @@
 			isa = PBXGroup;
 			children = (
 				61F117DE2B56F283003761C1 /* ReportView.swift */,
+				61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */,
+				61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */,
+				61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */,
+				61F118482B5DA05C003761C1 /* StatsTabbedView.swift */,
+				61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */,
+				61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */,
+				61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,12 +290,7 @@
 		61F117D82B56F1C5003761C1 /* Items */ = {
 			isa = PBXGroup;
 			children = (
-
-				61F117F02B56F7F6003761C1 /* CustomButton.swift */,
-
 				61F117F02B56F7F6003761C1 /* TUButton.swift */,
-
-
 				8298CFE02B5A16BA009FD48A /* TUCanvas.swift */,
 				9630DBB12B5A137C00727635 /* TUColor.swift */,
 				61F1181E2B59711E003761C1 /* TUTextField.swift */,
@@ -438,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */,
+				61F118542B5DA07A003761C1 /* MyStatsOverviewView.swift in Sources */,
 				61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */,
 				FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */,
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
@@ -448,12 +451,18 @@
 				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
 				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
 				8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */,
+				61F1184F2B5DA05D003761C1 /* MonthRunningStatsView.swift in Sources */,
 				61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */,
+				61F1184E2B5DA05D003761C1 /* StatsTabbedView.swift in Sources */,
 				61F117DF2B56F283003761C1 /* ReportView.swift in Sources */,
 				61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */,
 				82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */,
+				61F118502B5DA05D003761C1 /* YearRunningStatsView.swift in Sources */,
+				61F118522B5DA05D003761C1 /* MonthDistanceView.swift in Sources */,
 				8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */,
 				8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */,
+				61F118512B5DA05D003761C1 /* DailyRunningStatsView.swift in Sources */,
+				61F1184D2B5DA05D003761C1 /* AgeStatsTabbedView.swift in Sources */,
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
 				2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */,
 				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
