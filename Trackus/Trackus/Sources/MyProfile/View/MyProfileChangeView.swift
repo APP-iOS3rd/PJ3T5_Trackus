@@ -17,168 +17,124 @@ struct MyProfileChangeView: View {
 
     var runningStyles = ["가벼운 러닝", "무거운 러닝", "전문 러닝"]
 
-
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    NavigationLink(destination: MyProfileView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .foregroundColor(TUColor.main)
-                            .padding()
-                    }
-
-                    Spacer()
-
-                    // 가운데에 "프로필 변경" 텍스트
-                    Text("프로필 변경")
-                        .font(.headline)
-                        .foregroundColor(TUColor.main)
-
-                    Spacer()
-                }
-                .padding()
-                .background(TUColor.background)
-
+        TUCanvas.CustomCanvasView(style: .background) {
+            NavigationView {
                 VStack {
-                    Image("userface")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(TUColor.main, lineWidth: 2))
-                        .padding(.top, 20)
-
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("닉네임")
-                            .font(.headline)
-                            .foregroundColor(TUColor.main)
-                        TUTextField(placeholder: "닉네임", text: $username)
-                        Divider()
-                            .background(TUColor.border)
-
-                        Text("신체정보")
-                            .font(.headline)
-                            .foregroundColor(TUColor.main)
-
-                        // 신장
-                        HStack {
-                            Text("신장")
-                                .font(.headline)
+                    // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
+                    HStack {
+                        NavigationLink(destination: MyProfileView()) {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 20))
                                 .foregroundColor(TUColor.main)
-                                .frame(width: 80)
-
-                            Spacer()
-
-                            StepperUpDown(value: $height, unitLabel: "cm")
-                                .frame(width: 100, height: 40)
+                                .padding()
                         }
 
-                        // 체중
-                        HStack {
-                            Text("체중")
-                                .font(.headline)
-                                .foregroundColor(TUColor.main)
-                                .frame(width: 80)
+                        Spacer()
 
-                            Spacer()
-
-                            StepperUpDown(value: $weight, unitLabel: "kg")
-                                .frame(width: 100, height: 40)
-                        }
-                        Divider()
-                            .background(TUColor.border)
-
-                        Text("운동정보")
-                            .font(.headline)
-                            .foregroundColor(TUColor.main)
-                        // 러닝 스타일 선택
-                        HStack {
-                            Text("러닝 스타일")
-                                .font(.headline)
-                                .foregroundColor(TUColor.main)
-                                .frame(width: 80)
-
-                            Spacer()
-
-                            StepperRotation(value: $runningStyleIndex, options: runningStyles)
-                                .frame(width: 100, height: 40)
-                        }
-
-                        // 일일목표
-                        HStack {
-                            Text("신장")
-                                .font(.headline)
-                                .foregroundColor(TUColor.main)
-                                .frame(width: 80)
-
-                            Spacer()
-
-                            StepperUpDown(value: $setDailyGoal, unitLabel: "km")
-                                .frame(width: 100, height: 40)
-                        }
-
-                        Divider()
-                            .background(TUColor.border)
-
-                        Text("사용자 관련")
-                            .font(.headline)
-                            .foregroundColor(TUColor.main)
-                        Toggle("프로필 공개 여부", isOn: $isProfilePublic)
-                            .toggleStyle(SwitchToggleStyle(tint: TUColor.main))
-                            .foregroundColor(TUColor.main)
+                        // 가운데에 "프로필 변경" 텍스트
+                        MyTypography.subtitle(text: "프로필 변경")
+                        Spacer()
                     }
                     .background(TUColor.background)
-                    .padding(.top, 20)
-                    // 수정완료 버튼 추가
-                    TUButton(buttonText: "수정완료") {
-                        // 나중에 동작 추가하기
+                    .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+                    VStack {
+                        Image("userface")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                            .clipShape(Circle())
+                            .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+
+                        VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {
+                            MyTypography.bodytitle(text: "닉네임")
+                            TUTextField(placeholder: "닉네임", text: $username)
+                                .padding(.bottom, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+                                .padding(.trailing, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+
+                            Divider()
+                                .background(TUColor.border)
+
+                            MyTypography.bodytitle(text: "신체정보")
+
+                            HStack {
+                                            MyTypography.profilebody(text: "신장")
+
+                                            Spacer()
+
+                                            Picker(selection: $height, label: Text("")) {
+                                                ForEach(100..<200) {
+                                                    Text("\($0) cm")
+                                                }
+                                            }
+                                            .pickerStyle(DefaultPickerStyle())
+                                        }
+
+                                        HStack {
+                                            MyTypography.profilebody(text: "체중")
+
+                                            Spacer()
+
+                                            Picker(selection: $weight, label: Text("")) {
+                                                ForEach(30..<200) {
+                                                    Text("\($0) kg")
+                                                }
+                                            }
+                                            .pickerStyle(DefaultPickerStyle())
+                                        }
+
+                                        Divider()
+                                            .background(TUColor.border)
+
+                                        MyTypography.bodytitle(text: "운동정보")
+
+                                        HStack {
+                                            MyTypography.profilebody(text: "러닝 스타일")
+
+                                            Spacer()
+
+                                            StepperRotation(value: $runningStyleIndex, options: runningStyles)
+                                        }
+
+                                        HStack {
+                                            MyTypography.profilebody(text: "일일목표")
+
+                                            Spacer()
+
+                                            Picker(selection: $setDailyGoal, label: Text("")) {
+                                                ForEach(1..<100) {
+                                                    Text("\($0) km")
+                                                }
+                                            }
+                                            .pickerStyle(DefaultPickerStyle())
+                                        }
+
+                                        Divider()
+                                            .background(TUColor.border)
+
+                            MyTypography.bodytitle(text: "사용자 관련")
+
+                            Toggle("프로필 공개 여부", isOn: $isProfilePublic)
+                                .toggleStyle(SwitchToggleStyle(tint: TUColor.main))
+                                .font(Font.system(size: 15, weight: .regular))
+                                .foregroundColor(TUColor.main)
+                        }
+                        .background(TUColor.background)
+                        .padding(.horizontal, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+
+                        // 수정완료 버튼 추가
+                        TUButton(buttonText: "수정완료") {
+                            // 나중에 동작 추가하기
+                        }
+                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
                     }
-                    .padding(.top, 20)
-                }
 
-                Spacer()
+                    Spacer()
+                }
+                .navigationBarHidden(true)
+                .background(TUColor.background)
             }
-            .navigationBarHidden(true)
             .background(TUColor.background)
-        }
-        .background(TUColor.background)
-    }
-}
-
-struct StepperUpDown: View {
-    @Binding var value: Int
-    var unitLabel: String
-
-    var body: some View {
-        HStack(spacing: 0) {
-            Text("\(value)\(unitLabel)")
-                .foregroundColor(TUColor.main)
-
-            VStack(spacing: 0) {
-                // 증가
-                Button(action: {
-                    value += 1
-                }) {
-                    Image(systemName: "chevron.up.circle.fill")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(TUColor.main)
-                }
-                .padding(.bottom, 2)
-
-                // 감소
-                Button(action: {
-                    value -= 1
-                }) {
-                    Image(systemName: "chevron.down.circle.fill")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(TUColor.main)
-                }
-                .padding(.top, 2)
-            }
-            .padding(.leading, 4)
         }
     }
 }
@@ -189,33 +145,14 @@ struct StepperRotation: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Text(options[value])
-                .foregroundColor(TUColor.main)
-
-            VStack(spacing: 0) {
-                // 이전 스타일
-                Button(action: {
-                    self.value = (self.value - 1 + options.count) % options.count
-                }) {
-                    Image(systemName: "chevron.up.circle.fill")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(TUColor.main)
+            Picker(selection: $value, label: Text("")) {
+                ForEach(0..<options.count) {
+                    Text(options[$0])
                 }
-                .padding(.bottom, 2)
-
-                // 다음 스타일
-                Button(action: {
-                    self.value = (self.value + 1) % options.count
-                }) {
-                    Image(systemName: "chevron.down.circle.fill")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(TUColor.main)
-                }
-                .padding(.top, 2)
             }
-            .padding(.leading, 4)
+            .pickerStyle(DefaultPickerStyle())
+            .foregroundColor(TUColor.main)
+            
         }
     }
 }

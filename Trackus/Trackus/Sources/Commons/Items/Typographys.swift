@@ -26,6 +26,12 @@ struct MyTypography {
             .font(Font.system(size: 15, weight: .regular))
             .foregroundColor(.gray)
     }
+    // 마이페이지 본문
+    static func profilebody(text: String) -> Text {
+        return Text(text)
+            .font(Font.system(size: 15, weight: .regular))
+            .foregroundColor(.white)
+    }
 }
 
 struct Typographys: View {
@@ -37,6 +43,7 @@ struct Typographys: View {
             MyTypography.subtitle(text: "트랙어스 TrackUs")
             MyTypography.bodytitle(text: "트랙어스 TrackUs")
             MyTypography.body(text: "트랙어스 TrackUs")
+            MyTypography.profilebody(text: "트랙어스 TrackUs")
             
         }
         .frame(width: 1000, height: 1000)
