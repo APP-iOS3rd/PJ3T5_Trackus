@@ -100,7 +100,7 @@ struct TUButton: View {
                 }
             }
             .foregroundColor(active ? fontColor : .gray)
-            .background(active ? backgroundColor : .black)
+            .background(active ? backgroundColor : TUColor.background)
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)

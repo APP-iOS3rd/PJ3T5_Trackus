@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject var viewModel: LoginViewModel
     @State var selectedIndex = 0
     
     init() {
@@ -36,6 +37,7 @@ struct MainTabView: View {
                     }.tag(1)
                 
                 MyProfileView()
+                    .environmentObject(viewModel)
                     .onTapGesture {
                         selectedIndex = 2
                     }
