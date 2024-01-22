@@ -55,6 +55,7 @@
 		9630DBDC2B5D7F9500727635 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDB2B5D7F9500727635 /* SettingsView.swift */; };
 		9630DBDE2B5D8CAA00727635 /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDD2B5D8CAA00727635 /* WithdrawalView.swift */; };
 		9630DBE02B5D9FAF00727635 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDF2B5D9FAF00727635 /* FAQView.swift */; };
+		9630DBE22B5DAE6E00727635 /* AskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE12B5DAE6E00727635 /* AskView.swift */; };
 		FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98EA162B597623004CBFD1 /* ViewPadding.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		9630DBDB2B5D7F9500727635 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9630DBDD2B5D8CAA00727635 /* WithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
 		9630DBDF2B5D9FAF00727635 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
+		9630DBE12B5DAE6E00727635 /* AskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskView.swift; sourceTree = "<group>"; };
 		FE98EA162B597623004CBFD1 /* ViewPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				9630DBDB2B5D7F9500727635 /* SettingsView.swift */,
 				9630DBDD2B5D8CAA00727635 /* WithdrawalView.swift */,
 				9630DBDF2B5D9FAF00727635 /* FAQView.swift */,
+				9630DBE12B5DAE6E00727635 /* AskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				8298CFE92B5A4902009FD48A /* MainTabView.swift in Sources */,
 				61F117E12B56F291003761C1 /* RunningView.swift in Sources */,
 				9630DBB22B5A137C00727635 /* TUColor.swift in Sources */,
+				9630DBE22B5DAE6E00727635 /* AskView.swift in Sources */,
 				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
 				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
 				8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */,

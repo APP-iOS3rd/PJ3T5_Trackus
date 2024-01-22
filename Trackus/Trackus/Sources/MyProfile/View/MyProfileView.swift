@@ -10,6 +10,7 @@ import SwiftUI
 struct MyProfileView: View {
     @State private var isSettingsActive: Bool = false
     @State private var isFAQActive: Bool = false
+    @State private var isAskActive: Bool = false
     
     var body: some View {
         NavigationView {
@@ -74,7 +75,12 @@ struct MyProfileView: View {
                                 isFAQActive = true
                             }
                     }
-                    ListSettingsItem(title: "문의하기")
+                    NavigationLink(destination: AskView(), isActive: $isAskActive) {
+                        ListSettingsItem(title: "문의하기")
+                            .onTapGesture {
+                                isAskActive = true
+                            }
+                    }
                     Divider()
                     
                     Text("우리팀을 응원하기")
