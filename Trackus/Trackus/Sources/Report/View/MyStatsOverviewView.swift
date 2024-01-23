@@ -164,7 +164,7 @@ struct ChartUpBarView: View {
                 }
                 
                 Text(day ?? "Day")
-                    .foregroundStyle(.gray)
+                    .foregroundColor(.gray)
                     .font(.caption2)
             }
     }

@@ -25,7 +25,7 @@ struct StatsTabbedView: View {
     @Namespace private var animation
     
     var body: some View {
-            TUCanvas.CustomCanvasView(style: .content) {
+//            TUCanvas.CustomCanvasView(style: .content) {
                 
                 ZStack (alignment: .top){
                     TUColor.box.edgesIgnoringSafeArea(.all)
@@ -67,7 +67,7 @@ struct StatsTabbedView: View {
                     
                     animate()
                         .padding(.horizontal, 60)
-                        .offset(y: +45)
+                        .offset(y: +50)
                     
                 }
                 .sheet(isPresented: $isPickerPresented,onDismiss: {
@@ -78,7 +78,7 @@ struct StatsTabbedView: View {
                         .presentationDragIndicator(.hidden)
                 })
 
-            }
+//            }
         }
     
     @ViewBuilder
@@ -144,7 +144,10 @@ struct filterPicker: View {
                         isPickerPresented.toggle()
                     }, label: {
                         Text("확인")
-                            .padding()
+                            .foregroundColor(TUColor.main)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .padding(25)
                     })
                 }
                 

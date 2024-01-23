@@ -45,6 +45,7 @@
 		611744992B5FB19F0012941C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 611744982B5FB19F0012941C /* FirebaseStorageCombine-Community */; };
 		61A43EFD2B5FB23F00732E30 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFC2B5FB23F00732E30 /* MapboxMaps */; };
 		61A43F002B5FB26800732E30 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFF2B5FB26800732E30 /* PopupView */; };
+		61B8F91C2B600EC300A0A89D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */; };
 		61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DC2B56F275003761C1 /* MyProfileView.swift */; };
 		61F117E12B56F291003761C1 /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E02B56F291003761C1 /* RunningView.swift */; };
 		61F117E32B56F29A003761C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E22B56F29A003761C1 /* LoginView.swift */; };
@@ -65,6 +66,7 @@
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
 		82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */; };
 		82D0BCB82B5D63AA006A66B3 /* LiveRecordedRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */; };
+		82F9D3892B600DA600A8CD40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82F9D3882B600DA600A8CD40 /* GoogleService-Info.plist */; };
 		9630DBB22B5A137C00727635 /* TUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBB12B5A137C00727635 /* TUColor.swift */; };
 		9630DBD42B5D1C2D00727635 /* MyProfileChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBD32B5D1C2D00727635 /* MyProfileChangeView.swift */; };
 		9630DBDC2B5D7F9500727635 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDB2B5D7F9500727635 /* SettingsView.swift */; };
@@ -104,6 +106,7 @@
 		61108E0D2B5FB5A100F5B915 /* MyStatsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsCircleView.swift; sourceTree = "<group>"; };
 		61108E0F2B5FB5E200F5B915 /* MonthDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
 		61108E112B5FB62F00F5B915 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
+		61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61F117DC2B56F275003761C1 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		61F117E02B56F291003761C1 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		61F117E22B56F29A003761C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRecordedRunningView.swift; sourceTree = "<group>"; };
+		82F9D3882B600DA600A8CD40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9630DBB12B5A137C00727635 /* TUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUColor.swift; sourceTree = "<group>"; };
 		9630DBD32B5D1C2D00727635 /* MyProfileChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileChangeView.swift; sourceTree = "<group>"; };
 		9630DBDB2B5D7F9500727635 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -412,7 +416,7 @@
 		82C1C5F32B56E6AA00EBDAEE = {
 			isa = PBXGroup;
 			children = (
-				98F0F6B52B600DCC00A03F8F /* GoogleService-Info.plist */,
+				82F9D3882B600DA600A8CD40 /* GoogleService-Info.plist */,
 				82C1C5FE2B56E6AA00EBDAEE /* Trackus */,
 				82C1C5FD2B56E6AA00EBDAEE /* Products */,
 			);
@@ -550,7 +554,7 @@
 			files = (
 				82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */,
 				82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */,
-				98F0F6B62B600DCC00A03F8F /* GoogleService-Info.plist in Resources */,
+				82F9D3892B600DA600A8CD40 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +749,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 4N3558QY8F;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;
@@ -776,7 +780,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 4N3558QY8F;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;

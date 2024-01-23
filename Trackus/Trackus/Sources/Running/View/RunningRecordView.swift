@@ -13,9 +13,11 @@ struct RunningRecordView: View {
     @State private var isFullScreen = false
     @State var isShowingPopup = false
     @GestureState var press = false
+    @Binding var path: NavigationPath
     
-    init() {
+    init(path: Binding<NavigationPath>) {
         SoundSetting.instance.playSound(sound: .recordStart)
+        self._path = path
     }
     
     var body: some View {
@@ -31,7 +33,7 @@ struct RunningRecordView: View {
                     // 러닝 일시정지(현재까지 기록을 보여줌)
                     if isFullScreen {
                         VStack {
-                            NavigationLink(destination: RunningResultView().navigationBarBackButtonHidden(true), isActive: $isShowingResultView) {
+                            NavigationLink(destination: RunningResultView(path: $path).navigationBarBackButtonHidden(true), isActive: $isShowingResultView) {
                                 EmptyView()
                             }
                             Text("일시정지")
@@ -46,7 +48,7 @@ struct RunningRecordView: View {
                                 HStack {
                                     Text("킬로미터")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                     
                                     Spacer()
                                     Text("0.0")
@@ -57,7 +59,7 @@ struct RunningRecordView: View {
                                 HStack {
                                     Text("러닝타임")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                     
                                     Spacer()
                                     Text("00:00")
@@ -68,7 +70,7 @@ struct RunningRecordView: View {
                                 HStack {
                                     Text("페이스")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                     
                                     Spacer()
                                     Text("-'--''")
@@ -79,7 +81,7 @@ struct RunningRecordView: View {
                                 HStack {
                                     Text("칼로리")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                     
                                     Spacer()
                                     Text("0.0")
@@ -90,7 +92,7 @@ struct RunningRecordView: View {
                                 HStack {
                                     Text("케이던스")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                     
                                     Spacer()
                                     Text("-")
@@ -145,7 +147,7 @@ struct RunningRecordView: View {
                                     
                                     Text("현재까지 거리")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                                 
@@ -158,7 +160,7 @@ struct RunningRecordView: View {
                                     
                                     Text("경과 시간")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                             }
@@ -174,7 +176,7 @@ struct RunningRecordView: View {
                                     
                                     Text("페이스")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                                 
@@ -187,7 +189,7 @@ struct RunningRecordView: View {
                                     
                                     Text("소모 칼로리")
                                         .font(.system(size: 20, weight: .medium))
-                                        .foregroundColor(TUColor.sub)
+                                        .foregroundColor(TUColor.subText)
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                             }
@@ -202,6 +204,7 @@ struct RunningRecordView: View {
                         .padding(Constants.ViewLayoutConst.VIEW_STANDARD_HORIZONTAL_SPACING)
                     }
                 }
+             
             }
         }
         .popup(isPresented: $isShowingPopup) {
@@ -223,9 +226,6 @@ struct RunningRecordView: View {
         }
         
         .navigationBarBackButtonHidden(true)
-        
-        
-        
     }
     
     // 일시중지
@@ -257,6 +257,6 @@ struct RunningRecordView: View {
     }
 }
 
-#Preview {
-    RunningRecordView()
-}
+//#Preview {
+//    RunningRecordView()
+//}
