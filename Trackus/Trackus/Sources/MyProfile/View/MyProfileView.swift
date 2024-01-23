@@ -8,33 +8,27 @@
 import SwiftUI
 
 struct MyProfileView: View {
-    @State private var isSettingsActive: Bool = false
-    @State private var isFAQActive: Bool = false
-    @State private var isAskActive: Bool = false
-    // NavigationManager를 주입
-    @ObservedObject var navigationManager = NavigationManager.shared
+    @StateObject private var viewModel = MyProfileViewModel()
 
-    var body: some View {
-        TUCanvas.CustomCanvasView(style: .background) {
-            NavigationView {
-                VStack {
-                    // 상단 바
-                    HStack {
-                        MyTypography.subtitle(text: "마이페이지")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .padding()
+        var body: some View {
+            TUCanvas.CustomCanvasView(style: .background) {
+                NavigationView {
+                    VStack {
+                        HStack {
+                            MyTypography.subtitle(text: "마이페이지")
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .padding()
 
-                        Spacer()
+                            Spacer()
 
-                        Image(systemName: "gear")
-                            .font(.system(size: 20))
-                            .padding()
-                            .onTapGesture {
-                                // 톱니바퀴 이미지를 클릭했을 때 설정화면으로 이동
-                                isSettingsActive = true
-                            }
-                            .background(NavigationLink("", destination: SettingsView(), isActive: $isSettingsActive))
-                    }
+                            Image(systemName: "gear")
+                                .font(.system(size: 20))
+                                .padding()
+                                .onTapGesture {
+                                    viewModel.settingsButtonTapped()
+                                }
+                                .background(NavigationLink("", destination: SettingsView(), isActive: $viewModel.isSettingsActive))
+                        }
                     .foregroundColor(TUColor.main)
                     .background(TUColor.background)
 
@@ -75,16 +69,16 @@ struct MyProfileView: View {
 
                         MyTypography.bodytitle(text: "고객지원")
                             .padding(.horizontal)
-                        NavigationLink(destination: FAQView(), isActive: $isFAQActive) {
+                        NavigationLink(destination: FAQView(), isActive: $viewModel.isFAQActive) {
                             ListSettingsItem(title: "자주묻는 질문 Q&A")
                                 .onTapGesture {
-                                    isFAQActive = true
+                                    viewModel.faqButtonTapped()
                                 }
                         }
-                        NavigationLink(destination: AskView(), isActive: $isAskActive) {
+                        NavigationLink(destination: AskView(), isActive: $viewModel.isAskActive) {
                             ListSettingsItem(title: "문의하기")
                                 .onTapGesture {
-                                    isAskActive = true
+                                    viewModel.askButtonTapped()
                                 }
                         }
                         Divider()
@@ -104,7 +98,7 @@ struct MyProfileView: View {
 
                 // SettingsView가 나타날 때마다 설정 활성화 초기화
                 .onAppear {
-                    navigationManager.isSettingsActive = false
+                    viewModel.isSettingsActive = false
                 }
             }
         }

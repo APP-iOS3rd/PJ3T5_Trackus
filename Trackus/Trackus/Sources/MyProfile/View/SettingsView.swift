@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var isWithdrawalActive: Bool = false
+    @StateObject private var viewModel = SettingsViewModel()
 
     var body: some View {
         VStack {
@@ -22,7 +22,6 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-                // 가운데에 "설정" 텍스트
                 MyTypography.subtitle(text: "설정")
                 Spacer()
             }
@@ -48,10 +47,11 @@ struct SettingsView: View {
                     Button("회원탈퇴") {
 
                         // 버튼을 클릭하면 WithdrawalView로 이동
-                        isWithdrawalActive = true
+                        viewModel.navigateToWithdrawalView()
+
                     }
                     .foregroundColor(Color.red)
-                    .background(NavigationLink("", destination: WithdrawalView(), isActive: $isWithdrawalActive))
+                    .background(NavigationLink("", destination: WithdrawalView(), isActive: $viewModel.isWithdrawalActive))
                     .padding(.leading)
                 }
                 .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
@@ -66,3 +66,4 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
 }
+

@@ -7,9 +7,7 @@
 import SwiftUI
 
 struct WithdrawalView: View {
-    @State private var text: String = ""
-    @State private var isAgreed: Bool = false
-    @State private var showWithdrawalAlert: Bool = false
+    @StateObject private var viewModel = WithdrawalViewModel()
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
@@ -24,7 +22,6 @@ struct WithdrawalView: View {
                     
                     Spacer()
                     
-                    // 가운데에 "설정" 텍스트
                     MyTypography.subtitle(text: "회원탈퇴")
                     Spacer()
                 }
@@ -41,7 +38,7 @@ struct WithdrawalView: View {
                     }
 
                     MyTypography.bodytitle(text: "회원탈퇴 사유")
-                    TextEditor(text: $text)
+                    TextEditor(text: $viewModel.text)
                         .scrollContentBackground(.hidden)
                         .background(Color.clear)
                         .foregroundColor(TUColor.border)
@@ -53,27 +50,27 @@ struct WithdrawalView: View {
                     HStack {
                         MyTypography.bodytitle(text: "안내 사항 확인 후 탈퇴에 동의합니다.")
                         Spacer()
-                        Image(systemName: isAgreed ? "largecircle.fill.circle" : "circle")
+                        Image(systemName: viewModel.isAgreed ? "largecircle.fill.circle" : "circle")
                             .resizable()
                             .frame(width: Constants.ViewLayoutConst.VIEW_STANDARD_CORNER_RADIUS, height: Constants.ViewLayoutConst.VIEW_STANDARD_CORNER_RADIUS)
                             .foregroundColor(TUColor.main)
                             .onTapGesture {
-                                isAgreed.toggle()
-                            }
+                                viewModel.toggleAgreement()                            }
                     }
 
                     TUButton(buttonText: "회원탈퇴") {
-                        showWithdrawalAlert = true
+                        viewModel.initiateWithdrawal()
                     }
                     .foregroundColor(TUColor.border)
                     .padding(.horizontal)
-                    .alert(isPresented: $showWithdrawalAlert) {
+                    .alert(isPresented: $viewModel.showWithdrawalAlert) {
                         Alert(
                             title: Text("알림"),
                             message: Text("정말 탈퇴를 진행하시겠습니까? 울 서비스의 모든 데이터가 삭제됩니다."),
                             primaryButton: .cancel(),
                             secondaryButton: .destructive(Text("ok"), action: {
                                 // 회원 탈퇴 동작 추가하기
+                                viewModel.confirmWithdrawal()
                             })
                         )
                     }

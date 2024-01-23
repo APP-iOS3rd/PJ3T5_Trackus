@@ -10,7 +10,7 @@ import WebKit
 
 // 임시로 web뷰 띄우기
 struct AskView: View {
-    @State private var selectedQuestionIndex: Int?
+    @StateObject private var viewModel = AskViewModel()
 
     var body: some View {
         VStack {

@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct FAQView: View {
-    @State private var selectedQuestionIndex: Int?
-
+    @StateObject private var viewModel = FAQViewModel()
+    
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
             VStack {
-                // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
                 HStack {
                     NavigationLink(destination: MyProfileView()) {
                         Image(systemName: "chevron.left")
@@ -39,13 +38,13 @@ struct FAQView: View {
                                     MyTypography.bodytitle(text: "Q. \(FAQData.questions[index])")
                                         .lineLimit(1)
                                     Spacer()
-                                    Image(systemName: selectedQuestionIndex == index ? "chevron.up" : "chevron.down")
+                                    Image(systemName: viewModel.selectedQuestionIndex == index ? "chevron.up" : "chevron.down")
                                         .resizable()
                                         .frame(width: 12, height: 12)
                                         .foregroundColor(TUColor.main)
                                 }
 
-                                if selectedQuestionIndex == index {
+                                if viewModel.selectedQuestionIndex == index {
                                     MyTypography.body(text: "A. \(FAQData.answers[index])")
                                         .padding(.leading, 20)
                                         .padding(.top, 20)
@@ -57,7 +56,7 @@ struct FAQView: View {
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 // 질문에 대한 답변 숨김 여부
-                                selectedQuestionIndex = selectedQuestionIndex == index ? nil : index
+                                viewModel.toggleQuestion(index: index)
                             }
                             .listRowBackground(Color.clear)
                         }

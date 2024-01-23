@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct MyProfileChangeView: View {
-    @State private var username: String = ""
-    @State private var height: Int = 170
-    @State private var weight: Int = 65
-    @State private var runningStyleIndex: Int = 0
-    @State private var setDailyGoal: Int = 10
-    @State private var isProfilePublic: Bool = true
+    @StateObject private var viewModel = MyProfileChangeViewModel()
 
     var runningStyles = ["가벼운 러닝", "무거운 러닝", "전문 러닝"]
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
             VStack {
-                // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
                 HStack {
                     NavigationLink(destination: MyProfileView()) {
                         Image(systemName: "chevron.left")
@@ -31,7 +25,6 @@ struct MyProfileChangeView: View {
 
                     Spacer()
 
-                    // 가운데에 "프로필 변경" 텍스트
                     MyTypography.subtitle(text: "프로필 변경")
                     Spacer()
                 }
@@ -48,7 +41,7 @@ struct MyProfileChangeView: View {
 
                         VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING / 2) {
                             MyTypography.bodytitle(text: "닉네임")
-                            TUTextField(placeholder: "닉네임", text: $username)
+                            TUTextField(placeholder: "닉네임", text: $viewModel.username)
                                 .padding(.bottom, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
                                 .padding(.trailing, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
 
@@ -62,7 +55,7 @@ struct MyProfileChangeView: View {
 
                                 Spacer()
 
-                                Picker(selection: $height, label: Text("")) {
+                                Picker(selection: $viewModel.height, label: Text("")) {
                                     ForEach(100..<200) {
                                         Text("\($0) cm")
                                             .foregroundColor(TUColor.main)
@@ -77,7 +70,7 @@ struct MyProfileChangeView: View {
 
                                 Spacer()
 
-                                Picker(selection: $weight, label: Text("")) {
+                                Picker(selection: $viewModel.weight, label: Text("")) {
                                     ForEach(30..<200) {
                                         Text("\($0) kg")
                                             .foregroundColor(TUColor.main)
@@ -97,7 +90,7 @@ struct MyProfileChangeView: View {
 
                                 Spacer()
 
-                                StepperRotation(value: $runningStyleIndex, options: runningStyles)
+                                StepperRotation(value: $viewModel.runningStyleIndex, options: runningStyles)
                             }
 
                             HStack {
@@ -105,7 +98,7 @@ struct MyProfileChangeView: View {
 
                                 Spacer()
 
-                                Picker(selection: $setDailyGoal, label: Text("")) {
+                                Picker(selection: $viewModel.setDailyGoal, label: Text("")) {
                                     ForEach(1..<100) {
                                         Text("\($0) km")
                                             .foregroundColor(TUColor.main)
@@ -120,7 +113,7 @@ struct MyProfileChangeView: View {
 
                             MyTypography.bodytitle(text: "사용자 관련")
 
-                            Toggle("프로필 공개 여부", isOn: $isProfilePublic)
+                            Toggle("프로필 공개 여부", isOn: $viewModel.isProfilePublic)
                                 .toggleStyle(SwitchToggleStyle(tint: TUColor.main))
                                 .font(Font.system(size: 15, weight: .regular))
                                 .foregroundColor(TUColor.main)
@@ -132,6 +125,8 @@ struct MyProfileChangeView: View {
                         // 수정완료 버튼 추가
                         TUButton(buttonText: "수정완료") {
                             // 나중에 동작 추가하기
+                            viewModel.saveChanges()
+                            
                         }
                         .frame(maxWidth: .infinity)
                         .padding()

@@ -56,6 +56,11 @@
 		9630DBDE2B5D8CAA00727635 /* WithdrawalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDD2B5D8CAA00727635 /* WithdrawalView.swift */; };
 		9630DBE02B5D9FAF00727635 /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDF2B5D9FAF00727635 /* FAQView.swift */; };
 		9630DBE22B5DAE6E00727635 /* AskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE12B5DAE6E00727635 /* AskView.swift */; };
+		9630DBE42B5F657D00727635 /* MyProfileChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE32B5F657D00727635 /* MyProfileChangeViewModel.swift */; };
+		9630DBE62B5F686100727635 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE52B5F686100727635 /* SettingsViewModel.swift */; };
+		9630DBE82B5F754D00727635 /* WithdrawalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE72B5F754D00727635 /* WithdrawalViewModel.swift */; };
+		9630DBEA2B5F765300727635 /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE92B5F765300727635 /* FAQViewModel.swift */; };
+		9630DBEC2B5F76F100727635 /* AskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBEB2B5F76F100727635 /* AskViewModel.swift */; };
 		FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE98EA162B597623004CBFD1 /* ViewPadding.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +93,11 @@
 		9630DBDD2B5D8CAA00727635 /* WithdrawalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalView.swift; sourceTree = "<group>"; };
 		9630DBDF2B5D9FAF00727635 /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		9630DBE12B5DAE6E00727635 /* AskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskView.swift; sourceTree = "<group>"; };
+		9630DBE32B5F657D00727635 /* MyProfileChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileChangeViewModel.swift; sourceTree = "<group>"; };
+		9630DBE52B5F686100727635 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		9630DBE72B5F754D00727635 /* WithdrawalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewModel.swift; sourceTree = "<group>"; };
+		9630DBE92B5F765300727635 /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
+		9630DBEB2B5F76F100727635 /* AskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewModel.swift; sourceTree = "<group>"; };
 		FE98EA162B597623004CBFD1 /* ViewPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +209,11 @@
 			isa = PBXGroup;
 			children = (
 				61F117EA2B56F2DC003761C1 /* MyProfileViewModel.swift */,
+				9630DBE32B5F657D00727635 /* MyProfileChangeViewModel.swift */,
+				9630DBE52B5F686100727635 /* SettingsViewModel.swift */,
+				9630DBE72B5F754D00727635 /* WithdrawalViewModel.swift */,
+				9630DBE92B5F765300727635 /* FAQViewModel.swift */,
+				9630DBEB2B5F76F100727635 /* AskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -435,7 +450,9 @@
 			files = (
 				61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */,
 				61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */,
+				9630DBEA2B5F765300727635 /* FAQViewModel.swift in Sources */,
 				FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */,
+				9630DBEC2B5F76F100727635 /* AskViewModel.swift in Sources */,
 				9630DBDE2B5D8CAA00727635 /* WithdrawalView.swift in Sources */,
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
 				61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */,
@@ -443,6 +460,7 @@
 				61F117E12B56F291003761C1 /* RunningView.swift in Sources */,
 				9630DBB22B5A137C00727635 /* TUColor.swift in Sources */,
 				9630DBE22B5DAE6E00727635 /* AskView.swift in Sources */,
+				9630DBE42B5F657D00727635 /* MyProfileChangeViewModel.swift in Sources */,
 				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
 				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
 				8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */,
@@ -451,6 +469,7 @@
 				61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */,
 				82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */,
 				8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */,
+				9630DBE82B5F754D00727635 /* WithdrawalViewModel.swift in Sources */,
 				8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */,
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
 				9630DBE02B5D9FAF00727635 /* FAQView.swift in Sources */,
@@ -458,6 +477,7 @@
 				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
 				9630DBD42B5D1C2D00727635 /* MyProfileChangeView.swift in Sources */,
 				9630DBDC2B5D7F9500727635 /* SettingsView.swift in Sources */,
+				9630DBE62B5F686100727635 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
