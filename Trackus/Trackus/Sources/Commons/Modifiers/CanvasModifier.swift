@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TUCanvasModifier: ViewModifier {
+struct ContentModifier: ViewModifier {
     // 컬러가 정해지면 변경예정
     // 기본색상 설정
     let color: Color = TUColor.box
