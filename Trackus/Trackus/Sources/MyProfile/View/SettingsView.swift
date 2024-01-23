@@ -11,31 +11,25 @@ struct SettingsView: View {
     @State private var isWithdrawalActive: Bool = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // 뒤로가기 버튼과 설정 타이틀
-                HStack {
-                    NavigationLink(destination: MyProfileView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .foregroundColor(TUColor.main)
-                    }
-                    .padding(.leading)
-
-                    Spacer()
-
-                    // 가운데에 "설정" 텍스트
-                    Text("설정")
-                        .font(.title)
+        VStack {
+            HStack {
+                NavigationLink(destination: MyProfileView()) {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 20))
                         .foregroundColor(TUColor.main)
-
-                    Spacer()
+                        .padding()
                 }
-                .padding(.top)
-                .padding(.horizontal)
-                .background(TUColor.background)
+                
+                Spacer()
+                
+                // 가운데에 "설정" 텍스트
+                MyTypography.subtitle(text: "설정")
+                Spacer()
+            }
+            .background(TUColor.background)
+            .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+            
 
-                // 참고 코드의 내용
                 VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {
                     MyTypography.bodytitle(text: "앱 정보")
                         .padding(.leading)
@@ -66,10 +60,7 @@ struct SettingsView: View {
             .foregroundColor(TUColor.main)
             .background(TUColor.background)
             .navigationBarHidden(true)
-            .navigationBarTitle("설정", displayMode: .automatic)
-            .navigationBarHidden(true)
         }
-    }
 }
 
 #Preview {

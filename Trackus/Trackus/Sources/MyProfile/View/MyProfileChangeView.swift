@@ -19,25 +19,26 @@ struct MyProfileChangeView: View {
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
-            NavigationView {
-                VStack {
-                    // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
-                    HStack {
-                        NavigationLink(destination: MyProfileView()) {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 20))
-                                .foregroundColor(TUColor.main)
-                                .padding()
-                        }
-
-                        Spacer()
-
-                        // 가운데에 "프로필 변경" 텍스트
-                        MyTypography.subtitle(text: "프로필 변경")
-                        Spacer()
+            VStack {
+                // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
+                HStack {
+                    NavigationLink(destination: MyProfileView()) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 20))
+                            .foregroundColor(TUColor.main)
+                            .padding()
                     }
-                    .background(TUColor.background)
-                    .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+
+                    Spacer()
+
+                    // 가운데에 "프로필 변경" 텍스트
+                    MyTypography.subtitle(text: "프로필 변경")
+                    Spacer()
+                }
+                .background(TUColor.background)
+                .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+                
+                ScrollView {
                     VStack {
                         Image("userface")
                             .resizable()
@@ -45,7 +46,7 @@ struct MyProfileChangeView: View {
                             .clipShape(Circle())
                             .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
 
-                        VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {
+                        VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING / 2) {
                             MyTypography.bodytitle(text: "닉네임")
                             TUTextField(placeholder: "닉네임", text: $username)
                                 .padding(.bottom, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
@@ -57,59 +58,65 @@ struct MyProfileChangeView: View {
                             MyTypography.bodytitle(text: "신체정보")
 
                             HStack {
-                                            MyTypography.profilebody(text: "신장")
+                                MyTypography.profilebody(text: "신장")
 
-                                            Spacer()
+                                Spacer()
 
-                                            Picker(selection: $height, label: Text("")) {
-                                                ForEach(100..<200) {
-                                                    Text("\($0) cm")
-                                                }
-                                            }
-                                            .pickerStyle(DefaultPickerStyle())
-                                        }
+                                Picker(selection: $height, label: Text("")) {
+                                    ForEach(100..<200) {
+                                        Text("\($0) cm")
+                                            .foregroundColor(TUColor.main)
+                                    }
+                                }
+                                .accentColor(TUColor.main)
+                                .pickerStyle(DefaultPickerStyle())
+                            }
 
-                                        HStack {
-                                            MyTypography.profilebody(text: "체중")
+                            HStack {
+                                MyTypography.profilebody(text: "체중")
 
-                                            Spacer()
+                                Spacer()
 
-                                            Picker(selection: $weight, label: Text("")) {
-                                                ForEach(30..<200) {
-                                                    Text("\($0) kg")
-                                                }
-                                            }
-                                            .pickerStyle(DefaultPickerStyle())
-                                        }
+                                Picker(selection: $weight, label: Text("")) {
+                                    ForEach(30..<200) {
+                                        Text("\($0) kg")
+                                            .foregroundColor(TUColor.main)
+                                    }
+                                }
+                                .accentColor(TUColor.main)
+                                .pickerStyle(DefaultPickerStyle())
+                            }
 
-                                        Divider()
-                                            .background(TUColor.border)
+                            Divider()
+                                .background(TUColor.border)
 
-                                        MyTypography.bodytitle(text: "운동정보")
+                            MyTypography.bodytitle(text: "운동정보")
 
-                                        HStack {
-                                            MyTypography.profilebody(text: "러닝 스타일")
+                            HStack {
+                                MyTypography.profilebody(text: "러닝 스타일")
 
-                                            Spacer()
+                                Spacer()
 
-                                            StepperRotation(value: $runningStyleIndex, options: runningStyles)
-                                        }
+                                StepperRotation(value: $runningStyleIndex, options: runningStyles)
+                            }
 
-                                        HStack {
-                                            MyTypography.profilebody(text: "일일목표")
+                            HStack {
+                                MyTypography.profilebody(text: "일일목표")
 
-                                            Spacer()
+                                Spacer()
 
-                                            Picker(selection: $setDailyGoal, label: Text("")) {
-                                                ForEach(1..<100) {
-                                                    Text("\($0) km")
-                                                }
-                                            }
-                                            .pickerStyle(DefaultPickerStyle())
-                                        }
+                                Picker(selection: $setDailyGoal, label: Text("")) {
+                                    ForEach(1..<100) {
+                                        Text("\($0) km")
+                                            .foregroundColor(TUColor.main)
+                                    }
+                                }
+                                .accentColor(TUColor.main)
+                                .pickerStyle(DefaultPickerStyle())
+                            }
 
-                                        Divider()
-                                            .background(TUColor.border)
+                            Divider()
+                                .background(TUColor.border)
 
                             MyTypography.bodytitle(text: "사용자 관련")
 
@@ -120,21 +127,24 @@ struct MyProfileChangeView: View {
                         }
                         .background(TUColor.background)
                         .padding(.horizontal, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
-                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING / 2)
 
                         // 수정완료 버튼 추가
                         TUButton(buttonText: "수정완료") {
                             // 나중에 동작 추가하기
                         }
-                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(TUColor.main)
+                        .cornerRadius(Constants.ViewLayoutConst.VIEW_STANDARD_CORNER_RADIUS)
+                        .padding(.horizontal)
+                        .padding(.top, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING / 2)
                     }
-
-                    Spacer()
+                    .navigationBarHidden(true)
+                    .background(TUColor.background)
                 }
-                .navigationBarHidden(true)
                 .background(TUColor.background)
             }
-            .background(TUColor.background)
         }
     }
 }
@@ -151,12 +161,10 @@ struct StepperRotation: View {
                 }
             }
             .pickerStyle(DefaultPickerStyle())
-            .foregroundColor(TUColor.main)
-            
+            .accentColor(TUColor.main)
         }
     }
 }
-
 
 #Preview {
     MyProfileChangeView()

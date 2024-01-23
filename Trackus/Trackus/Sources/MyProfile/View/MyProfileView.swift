@@ -59,7 +59,7 @@ struct MyProfileView: View {
                         )
 
                     // 설정과 개인정보 항목
-                    VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) { // 상수 사용
+                    VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {
                         MyTypography.bodytitle(text: "운동")
                             .padding(.horizontal)
                         ListSettingsItem(title: "러닝기록")

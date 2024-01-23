@@ -12,21 +12,22 @@ struct FAQView: View {
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
-            NavigationView {
-                VStack {
-                    // 뒤로가기 버튼과 제목
-                    HStack {
-                        NavigationLink(destination: MyProfileView()) {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 20))
-                                .padding()
-                        }
-                        Spacer()
-
-                        MyTypography.subtitle(text: "자주묻는 질문 Q&A")
-
-                        Spacer()
+            VStack {
+                // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
+                HStack {
+                    NavigationLink(destination: MyProfileView()) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 20))
+                            .foregroundColor(TUColor.main)
+                            .padding()
                     }
+                    
+                    Spacer()
+                    
+                    // 가운데에 "자주묻는 질문" 텍스트
+                    MyTypography.subtitle(text: "자주묻는 질문")
+                    Spacer()
+                }
                     .foregroundColor(TUColor.main)
                     .background(TUColor.background)
 
@@ -67,7 +68,7 @@ struct FAQView: View {
                 .background(TUColor.background)
                 .navigationBarHidden(true)
             }
-        }
+        
     }
 }
 

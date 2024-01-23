@@ -13,22 +13,22 @@ struct AskView: View {
     @State private var selectedQuestionIndex: Int?
 
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    NavigationLink(destination: MyProfileView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING))
-                            .padding()
-                    }
-                    Spacer()
-
-                    Text("문의하기")
-                        .font(.title)
+        VStack {
+            // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
+            HStack {
+                NavigationLink(destination: MyProfileView()) {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 20))
+                        .foregroundColor(TUColor.main)
                         .padding()
-
-                    Spacer()
                 }
+                
+                Spacer()
+                
+                // 가운데에 "문의하기" 텍스트
+                MyTypography.subtitle(text: "문의하기")
+                Spacer()
+            }
                 .foregroundColor(TUColor.main)
                 .background(TUColor.background)
                 .navigationBarHidden(true)
@@ -37,7 +37,6 @@ struct AskView: View {
                 NaverWebView(urlString: "https://www.naver.com")
                     .edgesIgnoringSafeArea(.bottom)
             }
-        }
     }
 }
 
