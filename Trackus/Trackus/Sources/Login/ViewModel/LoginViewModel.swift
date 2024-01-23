@@ -48,6 +48,7 @@ enum SignUpFlow {
     case daily
 }
 
+@MainActor
 class LoginViewModel: ObservableObject {
     @Published var authenticationState: AuthenticationState = .unauthenticated
     @Published var errorMessage: String = ""

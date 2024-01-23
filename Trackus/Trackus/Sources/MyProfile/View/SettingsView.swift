@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject var LoginviewModel: LoginViewModel
     @StateObject private var viewModel = SettingsViewModel()
 
     var body: some View {
@@ -40,8 +41,12 @@ struct SettingsView: View {
 
                     MyTypography.bodytitle(text: "계정관리")
                         .padding(.leading)
+                    Button(action: {
+                        LoginviewModel.signOut()
+                    }, label: {
                     MyTypography.body(text: "로그아웃")
                         .padding(.leading)
+                    })
 
                     // 회원탈퇴 버튼
                     Button("회원탈퇴") {

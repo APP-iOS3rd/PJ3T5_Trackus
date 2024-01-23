@@ -11,6 +11,7 @@
 import SwiftUI
 
 struct MyProfileView: View {
+    @EnvironmentObject var LoginviewModel: LoginViewModel
     @StateObject private var viewModel = MyProfileViewModel()
 
         var body: some View {

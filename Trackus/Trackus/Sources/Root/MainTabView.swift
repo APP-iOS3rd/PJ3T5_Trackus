@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject var viewModel: LoginViewModel
     @State var selectedIndex = 0
     
     init() {
@@ -56,6 +57,7 @@ struct MainTabView: View {
                         Text("프로필")
                     }
                     .tag(2)
+                    .environmentObject(viewModel)
             }
             .navigationTitle(tabTitle)
             .navigationBarTitleDisplayMode(.inline)

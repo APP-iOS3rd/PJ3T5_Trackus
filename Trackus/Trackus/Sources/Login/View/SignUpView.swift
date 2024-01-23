@@ -467,7 +467,8 @@ struct DailyGoalView: View {
                 Spacer()
                 VStack {
                     Button(action: {
-                        viewModel.flow = nextflow
+                        viewModel.storeUserInformation()
+                        viewModel.authenticationState = .authenticated
                     }, label: {
                         MyTypography.bodytitle(text: "건너뛰기")
                     })

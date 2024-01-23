@@ -11,9 +11,11 @@ struct ContentView: View {
     @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
-        AuthenticatedView {
-            MainTabView()
-                .environmentObject(viewModel)
+        TUCanvas.CustomCanvasView {
+            AuthenticatedView {
+                MainTabView()
+                    .environmentObject(viewModel)
+            }
         }
     }
 }
