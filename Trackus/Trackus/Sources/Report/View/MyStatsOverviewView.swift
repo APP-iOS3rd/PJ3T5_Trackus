@@ -18,10 +18,13 @@ struct MyStatsOverviewView: View {
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        ZStack {
-            TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
+//        ZStack {
+//            TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
+                
+                Spacer()
+                
                     VStack {
                             HStack (spacing: 2) {
                                 ForEach(monthData2, id: \.id) { data in
@@ -31,10 +34,10 @@ struct MyStatsOverviewView: View {
                                             selectedBarIndex = selectedBarIndex == monthData2.firstIndex(of: data) ? nil : monthData2.firstIndex(of: data)
                                             selectedData = selectedBarIndex == nil ? nil : data
                                         }
-                                        .foregroundColor(selectedBarIndex == monthData2.firstIndex(of: data) ? TUColor.main : .gray)
+                                        .foregroundColor(selectedBarIndex == monthData2.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
                                 }
                             }
-                            .padding(.top, 24)
+//                            .padding(.top, 24)
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 150)
@@ -106,9 +109,10 @@ struct MyStatsOverviewView: View {
                 .background(TUColor.subBox)
                 .cornerRadius(14)
             }
-            .frame(height: 472)
-            .border(Color.black)
-        }
+//            .frame(height: 400)
+//            .frame(height: 472)
+//            .border(Color.black)
+//        }
     }
     
     // 그래프의 높이를 계산 후, 한계값을 넘지 않게 제한하는 함수
@@ -126,7 +130,8 @@ struct MyStatsOverviewView: View {
 }
 
 struct ChartUpBarView: View {
-    var value : Double
+//    var value : Double
+    var value : CGFloat
     var day: String?
     var isSelected : Bool
     
@@ -141,10 +146,12 @@ struct ChartUpBarView: View {
                 
                 ZStack(alignment: .bottom){
                     Capsule()
-                        .frame(minWidth: 25, maxWidth: 30, minHeight: 100, maxHeight: 100)
+                        .frame(minWidth: 21, minHeight: 100, maxHeight: 100)
+//                        .frame(minWidth: 25, maxWidth: 30, minHeight: 100, maxHeight: 100)
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0))
                     Capsule()
-                        .frame(minWidth: 25, maxWidth: 30, minHeight: CGFloat(barHeight), maxHeight: CGFloat(barHeight))
+                        .frame(minWidth: 21, minHeight: barHeight, maxHeight: barHeight)
+//                        .frame(minWidth: 25, maxWidth: 30, minHeight: CGFloat(barHeight), maxHeight: CGFloat(barHeight))
                     
                     if isSelected {
                         Text("\(String(format: "%0.1f", selectedData?.weight ?? 0))")

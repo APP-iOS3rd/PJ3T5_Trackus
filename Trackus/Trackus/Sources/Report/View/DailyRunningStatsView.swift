@@ -13,14 +13,20 @@ struct DailyRunningStatsView: View {
     @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     
+//    let maxWidth: CGFloat = 400
+    let minFrameWidth: CGFloat = 315
+    
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        ZStack {
-            TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
+        //        GeometryReader { geometry in
+//        ZStack (alignment: .top){
+            //                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
+                
+                Spacer()
                 
                 HStack {
                     Spacer()
@@ -32,7 +38,7 @@ struct DailyRunningStatsView: View {
                                 .frame(width: 10, height: 10)
                                 .foregroundColor(TUColor.main)
                             Text("박선구님")
-                                .font(.footnote)
+                                .font(.caption2)
                         }
                         
                         HStack {
@@ -41,11 +47,11 @@ struct DailyRunningStatsView: View {
                                 .frame(width: 10, height: 10)
                                 .foregroundColor(TUColor.sub)
                             Text("평균 속력 (\(String(format: "%.1f", avgWeakData)) km/h)")
-                                .font(.footnote)
+                                .font(.caption2)
                         }
                     }
                     .foregroundColor(TUColor.main)
-                    .padding(.vertical)
+                    .padding(.top)
                 }
                 
                 VStack {
@@ -57,17 +63,23 @@ struct DailyRunningStatsView: View {
                                     .onTapGesture {
                                         selectedBarIndex = selectedBarIndex == weakData.firstIndex(of: data) ? nil : weakData.firstIndex(of: data)
                                     }
-                                    .foregroundColor(selectedBarIndex == weakData.firstIndex(of: data) ? TUColor.main : .gray)
+                                    .foregroundColor(selectedBarIndex == weakData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
                             }
                         }
-                        .padding(.top, 24)
+                        .padding(.top)
                         
                         LineView(value: calculateBarHeight(avgWeakData))
+                        //                                .frame(minWidth: minFrameWidth)
+                        //                                .frame(width: minFrameWidth)
                     }
                 }
                 .frame(height: 150) // 그래프 프레임
+                //                    .frame(minWidth: minFrameWidth)
+                //                    .frame(width: maxWidth)
                 
+                //                    ZStack {
                 VStack {
+                    //                        VStack {
                     Text("박선구 님의 주간 러닝 속도 평균은 ") +  // 이름
                     Text("14.5 km/h").foregroundColor(TUColor.sub) + // 사용자 한 주의 평균 속도
                     Text("입니다. 20대 평균보다 ") + // 연령대
@@ -75,17 +87,42 @@ struct DailyRunningStatsView: View {
                     Text(" 빨리 달리고 있으며 상위 ") + // 연령대 평균이 사용자 평균 보다 높으면 빨리, 느리게
                     Text("23%").foregroundColor(TUColor.sub) + // 상위 몇 퍼센트 인지 ?
                     Text(" 입니다.")
+                    //                        }
+                    //                        .padding()
+                    //                            .lineLimit(3)
                 }
+                //                        .frame(width: 280)
+                .frame(minWidth: 250, maxWidth: 280)
                 .padding(.horizontal)
                 .font(.body)
                 .frame(height: 103)
+                //                    .frame(minHeight: 103)
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-                .padding(.top, 20)
+//                .padding(.top, 20)
+                .padding(.bottom, 10)
+                //                    .frame(minWidth: minFrameWidth)
+                //                    .frame(width: minFrameWidth)
+                //                    }
+                //                    .frame(minWidth: 150, maxWidth: 300)
+                //                    .frame(width: maxWidth)
+                
+                //                    .padding(.horizontal)
+                //                    .font(.body)
+                //                    .frame(height: 103)
+                //                    .background(TUColor.subBox)
+                //                    .foregroundColor(TUColor.main)
+                //                    .cornerRadius(14)
+                //                    .padding(.top, 20)
+                //                    .frame(width: geometry.size.width)
             }
-        }
+            //                .frame(width: 300)
+            //                .frame(height: 300)
+            //            }
+//        }
     }
+//    }
     
     // 그래프의 높이를 계산 후, 한계값을 넘지 않게 제한하는 함수
     func calculateBarHeight(_ weight: Double) -> Double {
@@ -117,9 +154,9 @@ struct BarView: View {
         VStack {
             
             ZStack(alignment: .bottom){
-                Capsule().frame(width: 35, height: 100) // 그래프 높이
+                Capsule().frame(width: 30, height: 100) // 그래프 높이
                     .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0))
-                Capsule().frame(width: 35, height: barHeight)
+                Capsule().frame(width: 30, height: barHeight)
                 
                 if isSelected {
                     Text("\(String(format: "%0.1f", selectedData?.weight ?? 0))")
@@ -177,7 +214,7 @@ struct WeakModel: Identifiable, Equatable {
 var weakData: [WeakModel] = [
     WeakModel(day: "Sun", weight: 12.5),
     WeakModel(day: "Mon", weight: 17.2),
-    WeakModel(day: "Tue", weight: 20.0),
+    WeakModel(day: "Tue", weight: 24.0),
     WeakModel(day: "Wed", weight: 15.5),
     WeakModel(day: "Thu", weight: 11.1),
     WeakModel(day: "Fri", weight: 7.5),

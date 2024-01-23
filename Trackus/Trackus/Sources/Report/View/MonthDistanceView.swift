@@ -12,126 +12,144 @@ import SwiftUI
 struct MonthDistanceView: View {
 //    @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
-    @State private var selectedAge = AvgAge.twenties // 사용자의 나이대
+    @Binding var selectedAge : AvgAge // 사용자의 나이대
     @State var isPickerPresented = false
     
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        ZStack(alignment: .top) {
-            TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
+        //        ZStack(alignment: .top) {
+        TUCanvas.CustomCanvasView(style: .content) {
             
-            VStack {
-                
-                HStack {
-                    // 연령대 피커 자리
-                    Button(action: {
-                        isPickerPresented.toggle()
-                    }, label: {
-                        HStack {
-                            Text(selectedAge.rawValue)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                
-                            Image(systemName: "chevron.down")
-                                .resizable()
-                                .frame(width: 12, height: 10)
-                        }
-                        .foregroundColor(TUColor.main)
-                        
-                    })
-//                    .padding(.top, 4)
-                    .padding(6)
-                    .background(TUColor.subBox)
-                    .cornerRadius(10)
-                    
-                    
-                    Text("평균 운동량 추세")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundStyle(TUColor.main)
-                    
-                    Spacer()
-                }
-                
-                
-                Spacer() // 공간 확보
-                
-                HStack {
-                    Spacer()
-                    
-                    VStack (alignment: .leading) {
-                        HStack() {
-                            
-                            Circle()
-                                .frame(width: 10, height: 10)
-                                .foregroundColor(TUColor.main)
-                            Text("박선구님") // 사용자 이름
-                                .font(.footnote)
-                        }
-                        
-                        HStack {
-                            
-                            Circle()
-                                .frame(width: 10, height: 10)
-                                .foregroundColor(TUColor.sub)
-                            Text("트랙어스 20대")
-                                .font(.footnote)
-                        }
-                    }
-                    .foregroundColor(TUColor.main)
-                    .padding(.vertical)
-                }
+            
+            ZStack (alignment: .top){
+                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
                 
                 VStack {
-                    ZStack {
-                        
-                        HStack (spacing: 2) {
-                            ForEach(kmData, id: \.id) { data in
+                    
+                    HStack {
+                        // 연령대 피커 자리
+                        Button(action: {
+                            isPickerPresented.toggle()
+                        }, label: {
+                            HStack {
+                                Text(selectedAge.rawValue)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
                                 
-                                ZStack {
-                                    KMBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == kmData.firstIndex(of: data), selectedData: data)
-                                        .onTapGesture {
-                                            selectedBarIndex = selectedBarIndex == kmData.firstIndex(of: data) ? nil : kmData.firstIndex(of: data)
-                                        }
-                                        .foregroundColor(selectedBarIndex == kmData.firstIndex(of: data) ? TUColor.main : .gray)
-                                    
-                                    KMLineView(value: calculateBarHeight(data.avg) + 10)
-                                }
+                                Image(systemName: "chevron.down")
+                                //                                .resizable()
+                                    .frame(width: 10, height: 10)
+                            }
+                            .foregroundColor(TUColor.main)
+                            
+                        })
+                        //                    .padding(.top, 4)
+                        .padding(6)
+                        .background(TUColor.subBox)
+                        .cornerRadius(10)
+                        
+                        
+                        Text("평균 운동량 추세")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(TUColor.main)
+                        
+                        Spacer()
+                    }
+//                    .padding(.bottom)
+                    
+                    
+                    Spacer() // 공간 확보
+                    
+                    HStack {
+                        Spacer()
+                        
+                        VStack (alignment: .leading) {
+                            HStack() {
+                                
+                                Circle()
+                                    .frame(width: 10, height: 10)
+                                    .foregroundColor(TUColor.main)
+                                Text("박선구님") // 사용자 이름
+                                    .font(.caption2)
+                            }
+                            
+                            HStack {
+                                
+                                Circle()
+                                    .frame(width: 10, height: 10)
+                                    .foregroundColor(TUColor.sub)
+                                Text("트랙어스 20대")
+                                    .font(.caption2)
                             }
                         }
-                        .padding(.top, 24)
+                        .foregroundColor(TUColor.main)
+//                        .padding(.top)
+                    }
+                    VStack {
+                        ZStack {
+                            
+                            HStack (spacing: 2) {
+                                ForEach(kmData, id: \.id) { data in
+                                    
+                                    ZStack {
+//                                        KMLineView(value: calculateBarHeight(data.avg))
+////                                            .foregroundColor(TUColor.sub.opacity(0.9))
+//                                            .foregroundColor(TUColor.sub)
+//                                            .cornerRadius(14)
+//                                            .offset(y: +2)
+                                        
+                                        KMBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == kmData.firstIndex(of: data), selectedData: data)
+                                            .onTapGesture {
+                                                selectedBarIndex = selectedBarIndex == kmData.firstIndex(of: data) ? nil : kmData.firstIndex(of: data)
+                                            }
+                                            .foregroundColor(selectedBarIndex == kmData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
+                                        
+                                        KMLineView(value: calculateBarHeight(data.avg))
+                                            .foregroundColor(TUColor.sub.opacity(0.8))
+                                            .cornerRadius(14)
+                                            .offset(y: +2)
+                                        
+//                                        KMLineView(value: calculateBarHeight(data.avg) + 10)
+                                    }
+                                }
+                            }
+                            .padding(.top, 24)
+                            
+                        }
+                        .frame(height: 150)
+                        
+                        VStack {
+                            Text("박선구 님의 운동량은 20대 평균보다 ") + // 이름, 선택한 연령대
+                            Text("1.7%").foregroundColor(TUColor.sub) + // 이번 달 운동 횟수와 연령대 평균 운동 횟수 비교
+                            Text(" 높으며 전달 대비 운동횟수가 3회 증가 했습니다.") // 사용자 운동 횟수가 평균보다 높은지, 낮은지 저번 달과 이번 달 운동 횟수 비교 해서 이번달이 높으면 증가, 저번달이 높으면 감소
+                        }
+                        .frame(minWidth: 250, maxWidth: 280)
+                        .padding(.horizontal)
+                        .font(.body)
+                        //                    .fontWeight(.bold)
+                        .frame(height: 103)
+                        .background(TUColor.subBox)
+                        .foregroundColor(TUColor.main)
+                        .cornerRadius(14)
+//                        .padding(.top, 20)
+                        .padding(.bottom, 10)
+                        
                         
                     }
-                    .frame(height: 150)
-                    
-                    VStack {
-                        Text("박선구 님의 운동량은 20대 평균보다 ") + // 이름, 선택한 연령대
-                        Text("1.7%").foregroundColor(TUColor.sub) + // 이번 달 운동 횟수와 연령대 평균 운동 횟수 비교
-                        Text(" 높으며 전달 대비 운동횟수가 3회 증가 했습니다.") // 사용자 운동 횟수가 평균보다 높은지, 낮은지 저번 달과 이번 달 운동 횟수 비교 해서 이번달이 높으면 증가, 저번달이 높으면 감소
-                    }
-                    .padding(.horizontal)
-                    .font(.body)
-//                    .fontWeight(.bold)
-                    .frame(height: 103)
-                    .background(TUColor.subBox)
-                    .foregroundColor(TUColor.main)
-                    .cornerRadius(14)
-                    .padding(.top, 20)
-                    
-                    
                 }
-            }
-            .frame(height: 450)
-            
-            .sheet(isPresented: $isPickerPresented,onDismiss: {
+                .frame(height: 400)
                 
-            }, content: {
-                filterPicker(selectedAge: $selectedAge, isPickerPresented: $isPickerPresented)
-                    .presentationDetents([.fraction(0.3), .large])
-                    .presentationDragIndicator(.hidden)
-            })
+                .sheet(isPresented: $isPickerPresented,onDismiss: {
+                    
+                }, content: {
+                    filterPicker(selectedAge: $selectedAge, isPickerPresented: $isPickerPresented)
+                        .presentationDetents([.fraction(0.3), .large])
+                        .presentationDragIndicator(.hidden)
+                })
+            }
         }
     }
     
@@ -164,10 +182,10 @@ struct KMBarView: View {
                 
                 ZStack(alignment: .bottom){
                     Capsule()
-                        .frame(minWidth: 23, minHeight: 100, maxHeight: 100)
+                        .frame(minWidth: 21, minHeight: 100, maxHeight: 100)
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0))
                     Capsule()
-                        .frame(minWidth: 23, minHeight: barHeight, maxHeight: barHeight)
+                        .frame(minWidth: 21, minHeight: barHeight, maxHeight: barHeight)
                     
                     if isSelected {
                         Text("\(String(format: "%0.1f", selectedData?.weight ?? 0))")
@@ -208,12 +226,18 @@ struct KMLineView: View {
                 VStack {
                     
                     Rectangle()
-                        .frame(height: 3)
-                        .foregroundColor(TUColor.sub)
+                        .frame(height: value)
+//                        .foregroundColor(TUColor.sub.opacity(0.8))
+                        .cornerRadius(14)
+//                        .background(.regularMaterial)
                     Spacer()
                 }
                 .frame(height: value)
             }
+            
+            Text("")
+                .foregroundStyle(.gray)
+                .font(.caption2)
         }
     }
 }
@@ -250,6 +274,6 @@ enum AvgAge: String, CaseIterable, Identifiable { // 나이대 피커
     var id: Self { self }
 }
 
-#Preview {
-    MonthDistanceView()
-}
+//#Preview {
+//    MonthDistanceView(selectedAge: AvgAge.teens)
+//}

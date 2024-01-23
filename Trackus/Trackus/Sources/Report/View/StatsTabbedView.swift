@@ -18,65 +18,81 @@ enum chartTab: String, CaseIterable {
 struct StatsTabbedView: View {
     @State private var pickerSelectedItem = 0
     @State private var isPickerPresented = false
-    @State private var selectedAge = AvgAge.twenties // 사용자의 나이대
+//    @State var selectedAge = AvgAge.twenties // 사용자의 나이대
+    @Binding var selectedAge : AvgAge
     @State var selection: String = "20대"
     
     @State private var selectedPicker: chartTab = .weak
     @Namespace private var animation
     
     var body: some View {
-        ZStack (alignment: .top) {
-            TUColor.box.edgesIgnoringSafeArea(.all)
-            
-            VStack {
+//        ZStack (alignment: .top) {
+            TUCanvas.CustomCanvasView(style: .content) {
                 
-                HStack {
-                    // 연령대 피커 자리
-                    Button(action: {
-                        isPickerPresented.toggle()
-                    }, label: {
+                //        }
+                ZStack (alignment: .top){
+                    TUColor.box.edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        
                         HStack {
-                            Text(selectedAge.rawValue)
+                            // 연령대 피커 자리
+                            Button(action: {
+                                isPickerPresented.toggle()
+                            }, label: {
+                                HStack {
+                                    Text(selectedAge.rawValue)
+                                        .font(.title2)
+                                        .fontWeight(.semibold)
+                                    
+                                    Image(systemName: "chevron.down")
+                                    //                                .resizable()
+                                        .frame(width: 10, height: 10)
+                                }
+                                .foregroundColor(TUColor.main)
+                                
+                            })
+                            .padding(6)
+                            .background(TUColor.subBox)
+                            .cornerRadius(10)
+                            
+                            Text("평균 러닝 속도")
                                 .font(.title2)
                                 .fontWeight(.semibold)
-                                
-                            Image(systemName: "chevron.down")
-                                .resizable()
-                                .frame(width: 12, height: 10)
+                                .foregroundColor(TUColor.main)
+                            
+                            Spacer()
                         }
-                        .foregroundColor(TUColor.main)
+                        .padding(.bottom)
                         
-                    })
-                    .padding(6)
-                    .background(TUColor.subBox)
-                    .cornerRadius(10)
+                        //                    animate()
+                        //                        .padding(.horizontal, 60)
+                        
+                        //                Spacer()
+                        
+                        selectView(selec: selectedPicker)
+//                            .border(Color.blue)
+                    }
+                    .frame(height: 400)
                     
-                    Text("평균 러닝 속도")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(TUColor.main)
-                    
-                    Spacer()
-                }
-                
                     animate()
-                    .padding(.horizontal, 60)
+                        .padding(.horizontal, 60)
+                        .offset(y: +45)
+                    //                    .padding(.top)
+                    
+                }
+                .sheet(isPresented: $isPickerPresented,onDismiss: {
+                    
+                }, content: {
+                    filterPicker(selectedAge: $selectedAge, isPickerPresented: $isPickerPresented)
+                        .presentationDetents([.fraction(0.3), .large])
+                        .presentationDragIndicator(.hidden)
+                })
                 
-                Spacer()
-                
-                selectView(selec: selectedPicker)
+                //            animate()
+                //                .padding(.horizontal, 60)
             }
-            .frame(height: 450)
-            
         }
-        .sheet(isPresented: $isPickerPresented,onDismiss: {
-            
-        }, content: {
-            filterPicker(selectedAge: $selectedAge, isPickerPresented: $isPickerPresented)
-                .presentationDetents([.fraction(0.3), .large])
-                .presentationDragIndicator(.hidden)
-        })
-    }
     
     @ViewBuilder
     private func animate() -> some View {
@@ -87,14 +103,16 @@ struct StatsTabbedView: View {
                         Capsule()
                             .foregroundColor(.gray)
                             .frame(height: 30)
+//                            .frame(width: 100, height: 30)
                             .matchedGeometryEffect(id: "일별", in: animation)
                     }
                     
                     Text(item.rawValue)
-                        .font(.body)
+                        .font(.footnote)
                         .bold()
                         .frame(maxWidth: .infinity / 3)
                         .frame(height: 30)
+//                        .frame(width: 100, height: 30)
                         .foregroundColor(selectedPicker == item ? TUColor.main : .gray)
                 }
                 .onTapGesture {
@@ -160,6 +178,6 @@ struct filterPicker: View {
     }
 }
 
-#Preview {
-    StatsTabbedView()
-}
+//#Preview {
+//    StatsTabbedView()
+//}

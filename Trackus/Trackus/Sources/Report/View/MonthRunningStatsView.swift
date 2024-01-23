@@ -13,14 +13,21 @@ struct MonthRunningStatsView: View {
     @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     
+//    let maxWidth: CGFloat = 400
+    let minFrameWidth: CGFloat = 315
+    
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        ZStack {
-            TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
+        //        GeometryReader { geometry in
+//        ZStack (alignment: .top){
+            //                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
+                
+                Spacer()
+                
                 HStack {
                     Spacer()
                     
@@ -31,7 +38,7 @@ struct MonthRunningStatsView: View {
                                 .frame(width: 10, height: 10)
                                 .foregroundColor(TUColor.main)
                             Text("박선구님") // 사용자 이름
-                                .font(.footnote)
+                                .font(.caption2)
                         }
                         
                         HStack {
@@ -40,32 +47,37 @@ struct MonthRunningStatsView: View {
                                 .frame(width: 10, height: 10)
                                 .foregroundColor(TUColor.sub)
                             Text("평균 속력 (\(String(format: "%.1f", avgWeakData)) km/h)")
-                                .font(.footnote)
+                                .font(.caption2)
                         }
                     }
                     .foregroundColor(TUColor.main)
-                    .padding(.vertical)
+                    .padding(.top)
                 }
                 
-                    VStack {
-                        ZStack {
-                            HStack (spacing: 2) {
-                                ForEach(monthData, id: \.id) { data in
-                                    
-                                    MonthBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == monthData.firstIndex(of: data), selectedData: data)
-                                        .onTapGesture {
-                                            selectedBarIndex = selectedBarIndex == monthData.firstIndex(of: data) ? nil : monthData.firstIndex(of: data)
-                                        }
-                                        .foregroundColor(selectedBarIndex == monthData.firstIndex(of: data) ? TUColor.main : .gray)
-                                }
+                VStack {
+                    ZStack {
+                        HStack (spacing: 2) {
+                            ForEach(monthData, id: \.id) { data in
+                                
+                                MonthBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == monthData.firstIndex(of: data), selectedData: data)
+                                    .onTapGesture {
+                                        selectedBarIndex = selectedBarIndex == monthData.firstIndex(of: data) ? nil : monthData.firstIndex(of: data)
+                                    }
+                                    .foregroundColor(selectedBarIndex == monthData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
                             }
-                            .padding(.top, 24)
-                            
-                            MonthLineView(value: calculateBarHeight(avgWeakData))
                         }
+                        .padding(.top)
+                        
+                        MonthLineView(value: calculateBarHeight(avgWeakData))
+                        //                                .frame(minWidth: minFrameWidth)
+                        //                                .frame(width: minFrameWidth)
+                    }
                 }
-                    .frame(height: 150) // 그래프 프레임
+                .frame(height: 150) // 그래프 프레임
+                //                    .frame(minWidth: minFrameWidth)
+                //                    .frame(width: maxWidth)
                 
+                //                    ZStack {
                 VStack {
                     Text("박선구 님의 5월 러닝 속도 평균은 ") + // 이름, 선택한 월의 속도 평균
                     Text("10.5 km/h").foregroundColor(TUColor.sub) + // 선택한 월의 속도 평균
@@ -75,16 +87,28 @@ struct MonthRunningStatsView: View {
                     Text("23%").foregroundColor(TUColor.sub) + // 연령층의 상위 몇 퍼센트인지
                     Text(" 입니다.")
                 }
+                //                        .frame(width: 280)
+                //                        .frame(maxWidth: 280, minWidth: 250)
+                .frame(minWidth: 250, maxWidth: 280)
                 .padding(.horizontal)
                 .font(.body)
                 .frame(height: 103)
+                //                    .frame(minHeight: 103)
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-                .padding(.top, 20)
+//                .padding(.top, 20)
+                .padding(.bottom, 10)
+                //                    .frame(minWidth: minFrameWidth)
+                //                    .frame(width: minFrameWidth)
             }
-        }
+            //                    .frame(minWidth: 150, maxWidth: 300)
+            //                }
+            //                .frame(height: 300)
+            //            }
+//        }
     }
+//    }
     
     func calculateBarHeight(_ weight: Double) -> Double { // ViewModel 로 빼기
         let normalizedHeight = (weight / limitValue) * Double(maxHeight)
@@ -115,10 +139,10 @@ struct MonthBarView: View {
                 
                 ZStack(alignment: .bottom){
                     Capsule()
-                        .frame(minWidth: 23, minHeight: 100, maxHeight: 100)
+                        .frame(minWidth: 21, minHeight: 100, maxHeight: 100)
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.0))
                     Capsule()
-                        .frame(minWidth: 23, minHeight: barHeight, maxHeight: barHeight)
+                        .frame(minWidth: 21, minHeight: barHeight, maxHeight: barHeight)
                     
                     if isSelected {
                         Text("\(String(format: "%0.1f", selectedData?.weight ?? 0))")
@@ -171,7 +195,7 @@ struct MonthLineView: View {
 var monthData: [WeakModel] = [
     WeakModel(day: "Jan", weight: 12.5),
     WeakModel(day: "Feb", weight: 17.2),
-    WeakModel(day: "Mar", weight: 20),
+    WeakModel(day: "Mar", weight: 24),
     WeakModel(day: "Apr", weight: 15.5),
     WeakModel(day: "May", weight: 14),
     WeakModel(day: "Jun", weight: 7.5),

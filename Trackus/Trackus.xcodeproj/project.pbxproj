@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E33C92B5A143E008E9032 /* Typographys.swift */; };
 		61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DC2B56F275003761C1 /* MyProfileView.swift */; };
-		61F117DF2B56F283003761C1 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DE2B56F283003761C1 /* ReportView.swift */; };
 		61F117E12B56F291003761C1 /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E02B56F291003761C1 /* RunningView.swift */; };
 		61F117E32B56F29A003761C1 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E22B56F29A003761C1 /* Login.swift */; };
 		61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E42B56F2B9003761C1 /* LoginViewModel.swift */; };
@@ -19,13 +18,16 @@
 		61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117EE2B56F2FA003761C1 /* Color+.swift */; };
 		61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117F02B56F7F6003761C1 /* TUButton.swift */; };
 		61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1181E2B59711E003761C1 /* TUTextField.swift */; };
-		61F1184D2B5DA05D003761C1 /* AgeStatsTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */; };
-		61F1184E2B5DA05D003761C1 /* StatsTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118482B5DA05C003761C1 /* StatsTabbedView.swift */; };
-		61F1184F2B5DA05D003761C1 /* MonthRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */; };
-		61F118502B5DA05D003761C1 /* YearRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */; };
-		61F118512B5DA05D003761C1 /* DailyRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */; };
-		61F118522B5DA05D003761C1 /* MonthDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */; };
-		61F118542B5DA07A003761C1 /* MyStatsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */; };
+		61F118632B5F58A4003761C1 /* DailyRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1185C2B5F58A3003761C1 /* DailyRunningStatsView.swift */; };
+		61F118652B5F58A4003761C1 /* DailyCircleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1185E2B5F58A3003761C1 /* DailyCircleTabView.swift */; };
+		61F118662B5F58A4003761C1 /* MyStatsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1185F2B5F58A4003761C1 /* MyStatsOverviewView.swift */; };
+		61F118672B5F58A4003761C1 /* MonthRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118602B5F58A4003761C1 /* MonthRunningStatsView.swift */; };
+		61F118682B5F58A4003761C1 /* MonthDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118612B5F58A4003761C1 /* MonthDistanceView.swift */; };
+		61F118692B5F58A4003761C1 /* MyStatsCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F118622B5F58A4003761C1 /* MyStatsCircleView.swift */; };
+		61F1186E2B5F58B0003761C1 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1186A2B5F58AF003761C1 /* ReportView.swift */; };
+		61F1186F2B5F58B0003761C1 /* StatsTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1186B2B5F58AF003761C1 /* StatsTabbedView.swift */; };
+		61F118702B5F58B0003761C1 /* TodayDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1186C2B5F58B0003761C1 /* TodayDistanceView.swift */; };
+		61F118712B5F58B0003761C1 /* YearRunningStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F1186D2B5F58B0003761C1 /* YearRunningStatsView.swift */; };
 		8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFDE2B5A10EE009FD48A /* Constants.swift */; };
 		8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE02B5A16BA009FD48A /* TUCanvas.swift */; };
 		8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */; };
@@ -63,8 +65,8 @@
 
 /* Begin PBXFileReference section */
 		2E9E33C92B5A143E008E9032 /* Typographys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typographys.swift; sourceTree = "<group>"; };
+		61E004812B5F97A60046C9A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		61F117DC2B56F275003761C1 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
-		61F117DE2B56F283003761C1 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		61F117E02B56F291003761C1 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		61F117E22B56F29A003761C1 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		61F117E42B56F2B9003761C1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -74,13 +76,16 @@
 		61F117EE2B56F2FA003761C1 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		61F117F02B56F7F6003761C1 /* TUButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUButton.swift; sourceTree = "<group>"; };
 		61F1181E2B59711E003761C1 /* TUTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUTextField.swift; sourceTree = "<group>"; };
-		61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeStatsTabbedView.swift; sourceTree = "<group>"; };
-		61F118482B5DA05C003761C1 /* StatsTabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTabbedView.swift; sourceTree = "<group>"; };
-		61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthRunningStatsView.swift; sourceTree = "<group>"; };
-		61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearRunningStatsView.swift; sourceTree = "<group>"; };
-		61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRunningStatsView.swift; sourceTree = "<group>"; };
-		61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
-		61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
+		61F1185C2B5F58A3003761C1 /* DailyRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRunningStatsView.swift; sourceTree = "<group>"; };
+		61F1185E2B5F58A3003761C1 /* DailyCircleTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCircleTabView.swift; sourceTree = "<group>"; };
+		61F1185F2B5F58A4003761C1 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
+		61F118602B5F58A4003761C1 /* MonthRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthRunningStatsView.swift; sourceTree = "<group>"; };
+		61F118612B5F58A4003761C1 /* MonthDistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
+		61F118622B5F58A4003761C1 /* MyStatsCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStatsCircleView.swift; sourceTree = "<group>"; };
+		61F1186A2B5F58AF003761C1 /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		61F1186B2B5F58AF003761C1 /* StatsTabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTabbedView.swift; sourceTree = "<group>"; };
+		61F1186C2B5F58B0003761C1 /* TodayDistanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayDistanceView.swift; sourceTree = "<group>"; };
+		61F1186D2B5F58B0003761C1 /* YearRunningStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearRunningStatsView.swift; sourceTree = "<group>"; };
 		8298CFDE2B5A10EE009FD48A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8298CFE02B5A16BA009FD48A /* TUCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvas.swift; sourceTree = "<group>"; };
 		8298CFE22B5A17F5009FD48A /* TUCanvasModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUCanvasModifier.swift; sourceTree = "<group>"; };
@@ -205,14 +210,16 @@
 		61F117CE2B56EF81003761C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				61F117DE2B56F283003761C1 /* ReportView.swift */,
-				61F118532B5DA07A003761C1 /* MyStatsOverviewView.swift */,
-				61F118472B5DA05C003761C1 /* AgeStatsTabbedView.swift */,
-				61F1184C2B5DA05D003761C1 /* MonthDistanceView.swift */,
-				61F118482B5DA05C003761C1 /* StatsTabbedView.swift */,
-				61F1184B2B5DA05C003761C1 /* DailyRunningStatsView.swift */,
-				61F118492B5DA05C003761C1 /* MonthRunningStatsView.swift */,
-				61F1184A2B5DA05C003761C1 /* YearRunningStatsView.swift */,
+				61F1186A2B5F58AF003761C1 /* ReportView.swift */,
+				61F1185E2B5F58A3003761C1 /* DailyCircleTabView.swift */,
+				61F118622B5F58A4003761C1 /* MyStatsCircleView.swift */,
+				61F1185F2B5F58A4003761C1 /* MyStatsOverviewView.swift */,
+				61F1186C2B5F58B0003761C1 /* TodayDistanceView.swift */,
+				61F1186B2B5F58AF003761C1 /* StatsTabbedView.swift */,
+				61F118612B5F58A4003761C1 /* MonthDistanceView.swift */,
+				61F1185C2B5F58A3003761C1 /* DailyRunningStatsView.swift */,
+				61F118602B5F58A4003761C1 /* MonthRunningStatsView.swift */,
+				61F1186D2B5F58B0003761C1 /* YearRunningStatsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +333,7 @@
 		82C1C5FE2B56E6AA00EBDAEE /* Trackus */ = {
 			isa = PBXGroup;
 			children = (
+				61E004812B5F97A60046C9A8 /* Info.plist */,
 				8298D0172B5A5740009FD48A /* GoogleService-Info.plist */,
 				61F117C52B56EE5C003761C1 /* Resources */,
 				61F117C42B56EDD9003761C1 /* Sources */,
@@ -439,31 +447,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F1186F2B5F58B0003761C1 /* StatsTabbedView.swift in Sources */,
+				61F118632B5F58A4003761C1 /* DailyRunningStatsView.swift in Sources */,
 				61F1181F2B59711E003761C1 /* TUTextField.swift in Sources */,
-				61F118542B5DA07A003761C1 /* MyStatsOverviewView.swift in Sources */,
 				61F117E92B56F2D1003761C1 /* ReportViewModel.swift in Sources */,
 				FE98EA172B597623004CBFD1 /* ViewPadding.swift in Sources */,
+				61F118692B5F58A4003761C1 /* MyStatsCircleView.swift in Sources */,
 				82C1C6022B56E6AA00EBDAEE /* ContentView.swift in Sources */,
 				61F117EB2B56F2DC003761C1 /* MyProfileViewModel.swift in Sources */,
 				8298CFE92B5A4902009FD48A /* MainTabView.swift in Sources */,
+				61F118672B5F58A4003761C1 /* MonthRunningStatsView.swift in Sources */,
 				61F117E12B56F291003761C1 /* RunningView.swift in Sources */,
 				9630DBB22B5A137C00727635 /* TUColor.swift in Sources */,
+				61F118652B5F58A4003761C1 /* DailyCircleTabView.swift in Sources */,
 				61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */,
 				61F117E32B56F29A003761C1 /* Login.swift in Sources */,
 				8298CFE12B5A16BA009FD48A /* TUCanvas.swift in Sources */,
-				61F1184F2B5DA05D003761C1 /* MonthRunningStatsView.swift in Sources */,
 				61F117EF2B56F2FA003761C1 /* Color+.swift in Sources */,
-				61F1184E2B5DA05D003761C1 /* StatsTabbedView.swift in Sources */,
-				61F117DF2B56F283003761C1 /* ReportView.swift in Sources */,
 				61F117F12B56F7F6003761C1 /* TUButton.swift in Sources */,
 				82C1C6002B56E6AA00EBDAEE /* TrackusApp.swift in Sources */,
-				61F118502B5DA05D003761C1 /* YearRunningStatsView.swift in Sources */,
-				61F118522B5DA05D003761C1 /* MonthDistanceView.swift in Sources */,
 				8298CFDF2B5A10EE009FD48A /* Constants.swift in Sources */,
 				8298CFE32B5A17F5009FD48A /* TUCanvasModifier.swift in Sources */,
-				61F118512B5DA05D003761C1 /* DailyRunningStatsView.swift in Sources */,
-				61F1184D2B5DA05D003761C1 /* AgeStatsTabbedView.swift in Sources */,
+				61F118682B5F58A4003761C1 /* MonthDistanceView.swift in Sources */,
+				61F118712B5F58B0003761C1 /* YearRunningStatsView.swift in Sources */,
 				61F117E72B56F2C6003761C1 /* RunningViewModel.swift in Sources */,
+				61F1186E2B5F58B0003761C1 /* ReportView.swift in Sources */,
+				61F118662B5F58A4003761C1 /* MyStatsOverviewView.swift in Sources */,
+				61F118702B5F58B0003761C1 /* TodayDistanceView.swift in Sources */,
 				2E9E33CA2B5A143E008E9032 /* Typographys.swift in Sources */,
 				61F117E52B56F2B9003761C1 /* LoginViewModel.swift in Sources */,
 			);
@@ -599,9 +609,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trackus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -629,9 +640,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trackus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
