@@ -11,6 +11,7 @@ struct MyProfileChangeView: View {
     @StateObject private var viewModel = MyProfileChangeViewModel()
 
     var runningStyles = ["가벼운 러닝", "무거운 러닝", "전문 러닝"]
+    @State private var check: Bool = false
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
@@ -41,7 +42,7 @@ struct MyProfileChangeView: View {
 
                         VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING / 2) {
                             MyTypography.bodytitle(text: "닉네임")
-                            TUTextField(placeholder: "닉네임", text: $viewModel.username)
+                            TUTextField(placeholder: "닉네임", text: $viewModel.username, availability: $check)
                                 .padding(.bottom, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
                                 .padding(.trailing, Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING)
 
