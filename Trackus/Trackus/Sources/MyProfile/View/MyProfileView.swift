@@ -12,25 +12,25 @@ struct MyProfileView: View {
 
         var body: some View {
             TUCanvas.CustomCanvasView(style: .background) {
-                NavigationView {
-                    VStack {
-                        HStack {
-                            MyTypography.subtitle(text: "마이페이지")
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .padding()
-
-                            Spacer()
-
-                            Image(systemName: "gear")
-                                .font(.system(size: 20))
-                                .padding()
-                                .onTapGesture {
-                                    viewModel.settingsButtonTapped()
-                                }
-                                .background(NavigationLink("", destination: SettingsView(), isActive: $viewModel.isSettingsActive))
-                        }
-                    .foregroundColor(TUColor.main)
-                    .background(TUColor.background)
+//                NavigationView {
+//                    VStack {
+//                        HStack {
+//                            MyTypography.subtitle(text: "마이페이지")
+//                                .frame(maxWidth: .infinity, alignment: .center)
+//                                .padding()
+//
+//                            Spacer()
+//
+//                            Image(systemName: "gear")
+//                                .font(.system(size: 20))
+//                                .padding()
+//                                .onTapGesture {
+//                                    viewModel.settingsButtonTapped()
+//                                }
+//                                .background(NavigationLink("", destination: SettingsView(), isActive: $viewModel.isSettingsActive))
+//                        }
+//                    .foregroundColor(TUColor.main)
+//                    .background(TUColor.background)
 
                     // 프로필 정보
                     ProfileInfo()
@@ -102,8 +102,8 @@ struct MyProfileView: View {
                 }
             }
         }
-    }
-}
+//    }
+//}
 
     
 class NavigationManager: ObservableObject {

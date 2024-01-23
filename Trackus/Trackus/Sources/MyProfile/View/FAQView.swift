@@ -13,22 +13,22 @@ struct FAQView: View {
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
             VStack {
-                HStack {
-                    NavigationLink(destination: MyProfileView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .foregroundColor(TUColor.main)
-                            .padding()
-                    }
-                    
-                    Spacer()
-                    
-                    // 가운데에 "자주묻는 질문" 텍스트
-                    MyTypography.subtitle(text: "자주묻는 질문")
-                    Spacer()
-                }
-                    .foregroundColor(TUColor.main)
-                    .background(TUColor.background)
+//                HStack {
+//                    NavigationLink(destination: MyProfileView()) {
+//                        Image(systemName: "chevron.left")
+//                            .font(.system(size: 20))
+//                            .foregroundColor(TUColor.main)
+//                            .padding()
+//                    }
+//                    
+//                    Spacer()
+//                    
+//                    // 가운데에 "자주묻는 질문" 텍스트
+//                    MyTypography.subtitle(text: "자주묻는 질문")
+//                    Spacer()
+//                }
+//                    .foregroundColor(TUColor.main)
+//                    .background(TUColor.background)
 
                     // 질문 및 답변 목록
                     List {

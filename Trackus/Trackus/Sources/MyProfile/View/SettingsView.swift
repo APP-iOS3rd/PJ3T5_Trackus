@@ -12,21 +12,21 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                NavigationLink(destination: MyProfileView()) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 20))
-                        .foregroundColor(TUColor.main)
-                        .padding()
-                }
-                
-                Spacer()
-                
-                MyTypography.subtitle(text: "설정")
-                Spacer()
-            }
-            .background(TUColor.background)
-            .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+//            HStack {
+//                NavigationLink(destination: MyProfileView()) {
+//                    Image(systemName: "chevron.left")
+//                        .font(.system(size: 20))
+//                        .foregroundColor(TUColor.main)
+//                        .padding()
+//                }
+//                
+//                Spacer()
+//                
+//                MyTypography.subtitle(text: "설정")
+//                Spacer()
+//            }
+//            .background(TUColor.background)
+//            .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
             
 
                 VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {

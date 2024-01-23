@@ -14,24 +14,23 @@ struct AskView: View {
 
     var body: some View {
         VStack {
-            // NavigationBarItems를 사용하여 좌측에 뒤로가기 버튼 및 타이틀 추가
-            HStack {
-                NavigationLink(destination: MyProfileView()) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 20))
-                        .foregroundColor(TUColor.main)
-                        .padding()
-                }
-                
-                Spacer()
-                
-                // 가운데에 "문의하기" 텍스트
-                MyTypography.subtitle(text: "문의하기")
-                Spacer()
-            }
-                .foregroundColor(TUColor.main)
-                .background(TUColor.background)
-                .navigationBarHidden(true)
+//            HStack {
+//                NavigationLink(destination: MyProfileView()) {
+//                    Image(systemName: "chevron.left")
+//                        .font(.system(size: 20))
+//                        .foregroundColor(TUColor.main)
+//                        .padding()
+//                }
+//                
+//                Spacer()
+//                
+//                // 가운데에 "문의하기" 텍스트
+//                MyTypography.subtitle(text: "문의하기")
+//                Spacer()
+//            }
+//                .foregroundColor(TUColor.main)
+//                .background(TUColor.background)
+//                .navigationBarHidden(true)
 
                 // 네이버 웹뷰 추가
                 NaverWebView(urlString: "https://www.naver.com")

@@ -14,22 +14,22 @@ struct MyProfileChangeView: View {
 
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
-            VStack {
-                HStack {
-                    NavigationLink(destination: MyProfileView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .foregroundColor(TUColor.main)
-                            .padding()
-                    }
-
-                    Spacer()
-
-                    MyTypography.subtitle(text: "프로필 변경")
-                    Spacer()
-                }
-                .background(TUColor.background)
-                .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+//            VStack {
+//                HStack {
+//                    NavigationLink(destination: MyProfileView()) {
+//                        Image(systemName: "chevron.left")
+//                            .font(.system(size: 20))
+//                            .foregroundColor(TUColor.main)
+//                            .padding()
+//                    }
+//
+//                    Spacer()
+//
+//                    MyTypography.subtitle(text: "프로필 변경")
+//                    Spacer()
+//                }
+//                .background(TUColor.background)
+//                .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
                 
                 ScrollView {
                     VStack {
@@ -142,7 +142,7 @@ struct MyProfileChangeView: View {
             }
         }
     }
-}
+//}
 
 struct StepperRotation: View {
     @Binding var value: Int

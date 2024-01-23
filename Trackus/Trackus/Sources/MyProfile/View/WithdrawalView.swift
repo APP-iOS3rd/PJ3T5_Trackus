@@ -12,20 +12,20 @@ struct WithdrawalView: View {
     var body: some View {
         TUCanvas.CustomCanvasView(style: .background) {
             VStack {
-                HStack {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .foregroundColor(TUColor.main)
-                            .padding()
-                    }
-                    
-                    Spacer()
-                    
-                    MyTypography.subtitle(text: "회원탈퇴")
-                    Spacer()
-                }
-                .background(TUColor.background)
+//                HStack {
+//                    NavigationLink(destination: SettingsView()) {
+//                        Image(systemName: "chevron.left")
+//                            .font(.system(size: 20))
+//                            .foregroundColor(TUColor.main)
+//                            .padding()
+//                    }
+//                    
+//                    Spacer()
+//                    
+//                    MyTypography.subtitle(text: "회원탈퇴")
+//                    Spacer()
+//                }
+//                .background(TUColor.background)
 
                 VStack(alignment: .leading, spacing: Constants.ViewLayoutConst.VIEW_STANDARD_INNER_SPACING) {
                     MyTypography.bodytitle(text: "회원탈퇴 안내")
