@@ -7,7 +7,18 @@
 
 import SwiftUI
 
-struct Login: View {
+struct LoginView: View {
+    @EnvironmentObject var viewModel: LoginViewModel
+    @Environment(\.dismiss) var dismiss
+    
+    private func signInWithGoogle() {
+        Task {
+            if await viewModel.signInWithGoogle() == true {
+                dismiss()
+            }
+        }
+    }
+    
     var body: some View {
         VStack{
             // 로고 부분
@@ -16,14 +27,15 @@ struct Login: View {
 //                .aspectRatio(contentMode: .fit)
 //                .frame(height: 60)
 //                .padding(60)
-//
+            
             Spacer()
             TUButton(image: Image(.googleLogo), buttonText: "Google로 시작하기", buttonColor: .white, fontColor: .black) {
-                
+                signInWithGoogle()
             }
             TUButton(image: Image(systemName: "applelogo"), buttonText: "Apple로 시작하기", buttonColor: .black, fontColor: .white) {
                 
             }
+            
         }
         .padding(20)
         .background(.black)
@@ -31,5 +43,7 @@ struct Login: View {
 }
 
 #Preview {
-    Login()
+    //LoginView()
+    
+    SignUpView()
 }
