@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RunningResultView: View {
     @State private var showCountView = false
+    @State var isShowingResultView = false
+    @Binding var path: NavigationPath
     
     var body: some View {
         TUCanvas.CustomCanvasView {
@@ -145,16 +147,11 @@ struct RunningResultView: View {
                         }
                         .horizontalStandardPadding()
                         
-                        NavigationLink(destination: MainTabView()) {
-                             Text("리포트로 이동하기")
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                         }
+                        TUButton(buttonText: "메인으로 이동하기") {
+                            path.removeLast()
+                        }
                         .standardPadding()
+                      
                     }
                 }
                 Spacer()
@@ -164,6 +161,6 @@ struct RunningResultView: View {
     }
 }
 
-#Preview {
-    RunningResultView()
-}
+//#Preview {
+//    RunningResultView()
+//}

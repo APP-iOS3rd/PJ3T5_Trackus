@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RunningView: View {
     @State private var showCountView = false
+    @Binding var path: NavigationPath
+    
     var body: some View {
         TUCanvas.CustomCanvasView {
             VStack {
@@ -25,7 +27,17 @@ struct RunningView: View {
                     .foregroundColor(.white)
                     .standardPadding()
                 
-                NavigationLink(destination: CountView().navigationBarBackButtonHidden(true)) {
+                //                NavigationLink(destination: CountView(naviPath: $naviPath).navigationBarBackButtonHidden(true)) {
+                //                    Text("시작하기")
+                //                        .fontWeight(.bold)
+                //                        .foregroundColor(.black)
+                //                        .padding()
+                //                        .frame(maxWidth: .infinity)
+                //                        .background(Color.white)
+                //                        .cornerRadius(10)
+                //                }
+                
+                NavigationLink(value: "countView", label: {
                     Text("시작하기")
                         .fontWeight(.bold)
                         .foregroundColor(.black)
@@ -33,16 +45,20 @@ struct RunningView: View {
                         .frame(maxWidth: .infinity)
                         .background(Color.white)
                         .cornerRadius(10)
-                }
+                })
                 .standardPadding()
-                
                 Spacer()
-            }            
+            }
+            .navigationDestination(for: String.self) { dest in
+                if dest == "countView" {
+                    CountView(path: $path).navigationBarBackButtonHidden(true)
+                }
+            }
         }
     }
     
 }
 
-#Preview {
-    RunningView()
-}
+//#Preview {
+//    RunningView()
+//}

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @State var selectedIndex = 0
+    @State private var path: NavigationPath = NavigationPath()
     
     init() {
         let appearance: UITabBarAppearance = UITabBarAppearance()
@@ -32,9 +33,9 @@ struct MainTabView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             TabView(selection: $selectedIndex) {
-                RunningView()
+                RunningView(path: $path)
                     .tabItem {
                         Image("run-icon").renderingMode(.template)
                         Text("러닝")
@@ -60,6 +61,7 @@ struct MainTabView: View {
             .navigationTitle(tabTitle)
             .navigationBarTitleDisplayMode(.inline)
             .accentColor(TUColor.main)
+            
         }
         
     }
