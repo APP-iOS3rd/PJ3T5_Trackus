@@ -8,25 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = LoginViewModel()
-    
+    // 화면을 나누기 위해서 임시로 설정
+    let isLogin = false
     var body: some View {
-        AuthenticatedView {
-            MainTabView()
-                .environmentObject(viewModel)
+        Group {
+            if isLogin {
+                Login()
+            } else {
+                MainTabView()
+            }
         }
-        
-        //        switch viewModel.authenticationState {
-        //        case .unauthenticated, .authenticating:
-        //            LoginView()
-        //                .environmentObject(viewModel)
-        //        case .signUpcating:
-        //            SignUpView()
-        //                .environmentObject(viewModel)
-        //        case .authenticated:
-        //            MainTabView()
-        //                .environmentObject(viewModel)
-        //        }
     }
 }
 

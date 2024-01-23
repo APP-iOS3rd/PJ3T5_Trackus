@@ -53,7 +53,7 @@ struct TUButton: View {
     
     // MARK: - 동적 버튼 (색상 설정)
     // 사용 예시
-    // TUButton(active: 변환 체크값, buttonText: "버튼 내용", backgroundColor: .red, fontColor: .white) { 실행코드 추가 }
+    // TUButton(active: 변환 체크값, buttonText: "버튼 내용", buttonColor: .red, fontColor: .white) { 실행코드 추가 }
     
     /// 동적 버튼(색상 설정) -> active: Bool - true(활성), false(비활성), buttonColor: 배경색, fontColor: 글자색
     ///
@@ -100,14 +100,14 @@ struct TUButton: View {
                 }
             }
             .foregroundColor(active ? fontColor : .gray)
-            .background(active ? backgroundColor : TUColor.background)
+            .background(active ? backgroundColor : .black)
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(backgroundColor == .black || active == false ? .gray : backgroundColor, lineWidth: 1)
+                    .stroke(backgroundColor == .black || active == false ? .gray : .white, lineWidth: 1)
             )
         }
-        .animation(.easeInOut(duration: 0.15), value: active)
+        .animation(.easeInOut(duration: 0.1), value: active)
         .disabled(!active)
         .frame(maxWidth: .infinity)
         .frame(height: 56)
