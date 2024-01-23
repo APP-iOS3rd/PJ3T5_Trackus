@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject var viewModel: LoginViewModel
     @State var selectedIndex = 0
 
     init() {
