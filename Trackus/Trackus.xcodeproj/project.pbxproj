@@ -45,6 +45,7 @@
 		611744992B5FB19F0012941C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 611744982B5FB19F0012941C /* FirebaseStorageCombine-Community */; };
 		61A43EFD2B5FB23F00732E30 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFC2B5FB23F00732E30 /* MapboxMaps */; };
 		61A43F002B5FB26800732E30 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFF2B5FB26800732E30 /* PopupView */; };
+		61B8F91C2B600EC300A0A89D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */; };
 		61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DC2B56F275003761C1 /* MyProfileView.swift */; };
 		61F117E12B56F291003761C1 /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E02B56F291003761C1 /* RunningView.swift */; };
 		61F117E32B56F29A003761C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E22B56F29A003761C1 /* LoginView.swift */; };
@@ -76,7 +77,6 @@
 		9630DBE82B5F754D00727635 /* WithdrawalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE72B5F754D00727635 /* WithdrawalViewModel.swift */; };
 		9630DBEA2B5F765300727635 /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBE92B5F765300727635 /* FAQViewModel.swift */; };
 		9630DBEC2B5F76F100727635 /* AskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBEB2B5F76F100727635 /* AskViewModel.swift */; };
-		96998F5E2B600BE600A544C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96998F5D2B600BE600A544C1 /* GoogleService-Info.plist */; };
 		986965B72B5FD78D00EA9746 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986965B42B5FD78D00EA9746 /* AuthenticatedView.swift */; };
 		986965B82B5FD78D00EA9746 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986965B52B5FD78D00EA9746 /* SignUpView.swift */; };
 		986965BD2B5FD8C900EA9746 /* PickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986965BC2B5FD8C900EA9746 /* PickerSheet.swift */; };
@@ -104,6 +104,7 @@
 		61108E0D2B5FB5A100F5B915 /* MyStatsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsCircleView.swift; sourceTree = "<group>"; };
 		61108E0F2B5FB5E200F5B915 /* MonthDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
 		61108E112B5FB62F00F5B915 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
+		61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61F117DC2B56F275003761C1 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		61F117E02B56F291003761C1 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		61F117E22B56F29A003761C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 		9630DBE72B5F754D00727635 /* WithdrawalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewModel.swift; sourceTree = "<group>"; };
 		9630DBE92B5F765300727635 /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
 		9630DBEB2B5F76F100727635 /* AskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewModel.swift; sourceTree = "<group>"; };
-		96998F5D2B600BE600A544C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		986965B42B5FD78D00EA9746 /* AuthenticatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
 		986965B52B5FD78D00EA9746 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		986965BC2B5FD8C900EA9746 /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
@@ -412,7 +412,7 @@
 		82C1C5F32B56E6AA00EBDAEE = {
 			isa = PBXGroup;
 			children = (
-				96998F5D2B600BE600A544C1 /* GoogleService-Info.plist */,
+				61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */,
 				82C1C5FE2B56E6AA00EBDAEE /* Trackus */,
 				82C1C5FD2B56E6AA00EBDAEE /* Products */,
 			);
@@ -550,7 +550,7 @@
 			files = (
 				82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */,
 				82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */,
-				96998F5E2B600BE600A544C1 /* GoogleService-Info.plist in Resources */,
+				61B8F91C2B600EC300A0A89D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;
@@ -776,7 +776,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;

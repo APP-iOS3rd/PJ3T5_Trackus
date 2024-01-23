@@ -18,7 +18,7 @@ struct MonthDistanceView: View {
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        TUCanvas.CustomCanvasView(style: .content) {
+//        TUCanvas.CustomCanvasView(style: .content) {
             
             
             ZStack (alignment: .top){
@@ -50,7 +50,7 @@ struct MonthDistanceView: View {
                         Text("평균 운동량 추세")
                             .font(.title2)
                             .fontWeight(.semibold)
-                            .foregroundStyle(TUColor.main)
+                            .foregroundColor(TUColor.main)
                         
                         Spacer()
                     }
@@ -89,22 +89,31 @@ struct MonthDistanceView: View {
                                 ForEach(kmData, id: \.id) { data in
                                     
                                     ZStack {
-//                                        KMLineView(value: calculateBarHeight(data.avg))
-////                                            .foregroundColor(TUColor.sub.opacity(0.9))
-//                                            .foregroundColor(TUColor.sub)
-//                                            .cornerRadius(14)
-//                                            .offset(y: +2)
-                                        
-                                        KMBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == kmData.firstIndex(of: data), selectedData: data)
-                                            .onTapGesture {
-                                                selectedBarIndex = selectedBarIndex == kmData.firstIndex(of: data) ? nil : kmData.firstIndex(of: data)
-                                            }
-                                            .foregroundColor(selectedBarIndex == kmData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
-                                        
-                                        KMLineView(value: calculateBarHeight(data.avg))
-                                            .foregroundColor(TUColor.sub.opacity(0.8))
-                                            .cornerRadius(14)
-                                            .offset(y: +2)
+                                        if calculateBarHeight(data.weight) > calculateBarHeight(data.avg) {
+                                            
+                                            KMBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == kmData.firstIndex(of: data), selectedData: data)
+                                                .onTapGesture {
+                                                    selectedBarIndex = selectedBarIndex == kmData.firstIndex(of: data) ? nil : kmData.firstIndex(of: data)
+                                                }
+                                                .foregroundColor(selectedBarIndex == kmData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
+                                            
+                                            KMLineView(value: calculateBarHeight(data.avg))
+                                                .foregroundColor(TUColor.sub.opacity(0.8))
+                                                .cornerRadius(14)
+                                                .offset(y: +2)
+                                        } else {
+                                            
+                                            KMLineView(value: calculateBarHeight(data.avg))
+                                                .foregroundColor(TUColor.sub.opacity(0.8))
+                                                .cornerRadius(14)
+                                                .offset(y: +2)
+                                            
+                                            KMBarView(value: calculateBarHeight(data.weight), day: data.day, isSelected: selectedBarIndex == kmData.firstIndex(of: data), selectedData: data)
+                                                .onTapGesture {
+                                                    selectedBarIndex = selectedBarIndex == kmData.firstIndex(of: data) ? nil : kmData.firstIndex(of: data)
+                                                }
+                                                .foregroundColor(selectedBarIndex == kmData.firstIndex(of: data) ? TUColor.main : TUColor.main.opacity(0.5))
+                                        }
                                 
                                     }
                                 }
@@ -126,7 +135,7 @@ struct MonthDistanceView: View {
                         .background(TUColor.subBox)
                         .foregroundColor(TUColor.main)
                         .cornerRadius(14)
-                        .padding(.bottom, 10)
+//                        .padding(.bottom, 10)
                         
                         
                     }
@@ -141,7 +150,7 @@ struct MonthDistanceView: View {
                         .presentationDragIndicator(.hidden)
                 })
             }
-        }
+//        }
     }
     
     func calculateBarHeight(_ weight: Double) -> Double {
@@ -198,7 +207,7 @@ struct KMBarView: View {
                 }
                 
                 Text(day ?? "Day")
-                    .foregroundStyle(.gray)
+                    .foregroundColor(.gray)
                     .font(.caption2)
             }
     }
@@ -225,7 +234,7 @@ struct KMLineView: View {
             }
             
             Text("")
-                .foregroundStyle(.gray)
+                .foregroundColor(.gray)
                 .font(.caption2)
         }
     }

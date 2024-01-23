@@ -85,7 +85,7 @@ struct MonthRunningStatsView: View {
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-                .padding(.bottom, 10)
+//                .padding(.bottom, 10)
             }
     }
     

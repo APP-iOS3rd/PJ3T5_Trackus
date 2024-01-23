@@ -70,16 +70,14 @@ struct TodayDistanceView: View {
                             .foregroundColor(TUColor.main)
                         VStack {
                             // 사용자의 오늘 하루 러닝 거리
-                            HStack {
-                                TodayDistanceBar(value: calculateDistanceBarWidth(myDistance[0].distance, data: [myDistance[0]], limitValue: distanceLimitValue), distanceValue: myDistance[0].distance)
-                                    .foregroundColor(TUColor.main)
-//                                    .frame(maxWidth: .infinity)
-                            }
+                            
+                            TodayDistanceBar(value: calculateDistanceBarWidth(myDistance[0].distance, data: [myDistance[0]], limitValue: distanceLimitValue), distanceValue: myDistance[0].distance)
+                                .foregroundColor(TUColor.main)
                             
                             // 같은 나이대 오늘 하루 러닝 거리
+                            
                             TodayDistanceBar(value: calculateDistanceBarWidth(ageDistance[0].distance, data: [ageDistance[0]], limitValue: distanceLimitValue), distanceValue: ageDistance[0].distance)
                                 .foregroundColor(TUColor.sub)
-//                                .frame(maxWidth: .infinity)
                         }
                         .padding(.horizontal)
                     }
