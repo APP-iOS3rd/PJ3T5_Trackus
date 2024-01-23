@@ -16,9 +16,6 @@ struct BottomSheet<Content: View>: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Color.black
-                .opacity(0.3)
-                .ignoresSafeArea() 
             VStack {
                 content
             }

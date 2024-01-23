@@ -12,8 +12,8 @@ public enum Constants {
     enum ViewLayoutConst {
         static let VIEW_STANDARD_INNER_SPACING: CGFloat = 20
         static let VIEW_STANDARD_CORNER_RADIUS: CGFloat = 14
-        static let VIEW_STANDART_HORIZONTAL_SPACING: CGFloat = 20
-        static let VIEW_STANDART_VERTICAL_SPACING: CGFloat = 20
+        static let VIEW_STANDARD_HORIZONTAL_SPACING: CGFloat = 20
+        static let VIEW_STANDARD_VERTICAL_SPACING: CGFloat = 20
         static let VIEW_SPECIAL_SPACING: CGFloat = 32
     }
 }

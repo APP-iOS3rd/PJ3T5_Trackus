@@ -38,11 +38,11 @@ struct RunningRecordView: View {
                                 .font(.system(size: 34, weight: .heavy))
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(Constants.ViewLayoutConst.VIEW_STANDART_HORIZONTAL_SPACING)
+                                .padding(Constants.ViewLayoutConst.VIEW_STANDARD_HORIZONTAL_SPACING)
                             
                             Divider()
                             
-                            VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDART_VERTICAL_SPACING) {
+                            VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDARD_VERTICAL_SPACING) {
                                 HStack {
                                     Text("킬로미터")
                                         .font(.system(size: 20, weight: .medium))
@@ -98,7 +98,7 @@ struct RunningRecordView: View {
                                         .foregroundColor(.white)
                                 }
                             }
-                            .padding(Constants.ViewLayoutConst.VIEW_STANDART_HORIZONTAL_SPACING)
+                            .padding(Constants.ViewLayoutConst.VIEW_STANDARD_HORIZONTAL_SPACING)
                             
                             Divider()
                             
@@ -125,7 +125,7 @@ struct RunningRecordView: View {
                                         .foregroundColor(.white)
                                 }
                             }
-                            .padding(Constants.ViewLayoutConst.VIEW_STANDART_HORIZONTAL_SPACING)
+                            .padding(Constants.ViewLayoutConst.VIEW_STANDARD_HORIZONTAL_SPACING)
                             .padding(.bottom, 32)
                         }
                         
@@ -135,7 +135,7 @@ struct RunningRecordView: View {
                         VStack(spacing: Constants.ViewLayoutConst.VIEW_SPECIAL_SPACING) {
                             Spacer()
                             HStack {
-                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDART_VERTICAL_SPACING) {
+                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDARD_VERTICAL_SPACING) {
                                     Text("0.0")
                                         .font(.system(size: 36, weight: .heavy))
                                         .italic()
@@ -149,7 +149,7 @@ struct RunningRecordView: View {
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                                 
-                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDART_VERTICAL_SPACING) {
+                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDARD_VERTICAL_SPACING) {
                                     Text("00:00")
                                         .font(.system(size: 36, weight: .heavy))
                                         .italic()
@@ -164,7 +164,7 @@ struct RunningRecordView: View {
                             }
                             
                             HStack {
-                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDART_VERTICAL_SPACING) {
+                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDARD_VERTICAL_SPACING) {
                                     Text("-'--''")
                                         .font(.system(size: 36, weight: .heavy))
                                         .italic()
@@ -178,7 +178,7 @@ struct RunningRecordView: View {
                                         .frame(maxWidth: .infinity, alignment: .center)
                                 }
                                 
-                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDART_VERTICAL_SPACING) {
+                                VStack(spacing: Constants.ViewLayoutConst.VIEW_STANDARD_VERTICAL_SPACING) {
                                     Text("0")
                                         .font(.system(size: 36, weight: .heavy))
                                         .italic()
@@ -199,7 +199,7 @@ struct RunningRecordView: View {
                             }
                             .padding(.bottom, 32)
                         }
-                        .padding(Constants.ViewLayoutConst.VIEW_STANDART_HORIZONTAL_SPACING)
+                        .padding(Constants.ViewLayoutConst.VIEW_STANDARD_HORIZONTAL_SPACING)
                     }
                 }
             }

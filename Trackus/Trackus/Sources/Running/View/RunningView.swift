@@ -14,23 +14,23 @@ struct RunningView: View {
             TUCanvas.CustomCanvasView {
                 VStack {
                     HStack {
-                        Text("러닝")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.leading, 20)
-                        
-                        Text("나만의 코스에서 달려보세요")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                    }
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0 + 20)
-                    
-                    Divider().background(Color.white)
-                    
+//                        Text("러닝")
+//                            .font(.title)
+//                            .fontWeight(.bold)
+//                            .foregroundColor(.white)
+//                            .padding(.leading, 20)
+//                        
+//                        Text("나만의 코스에서 달려보세요")
+//                            .font(.body)
+//                            .fontWeight(.bold)
+//                            .foregroundColor(.white)
+//                        
+//                        Spacer()
+//                    }
+//                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0 + 20)
+//                    
+//                    Divider().background(Color.white)
+//                    
                     
                     Spacer()
                     
@@ -45,14 +45,15 @@ struct RunningView: View {
                         .foregroundColor(.white)
                         .standardPadding()
                     
-                    NavigationLink(destination: CountView().navigationBarBackButtonHidden(true)) {
-                        Text("시작하기")
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .cornerRadius(10)
+                        NavigationLink(destination: CountView().navigationBarBackButtonHidden(true)) {
+                            Text("시작하기")
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                        }
                     }
                     .standardPadding()
                     

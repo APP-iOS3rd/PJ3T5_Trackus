@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RunningResultView: View {
     @State private var showCountView = false
+    
     var body: some View {
         TUCanvas.CustomCanvasView {
             VStack {
@@ -144,19 +145,18 @@ struct RunningResultView: View {
                         }
                         .horizontalStandardPadding()
                         
-                        NavigationLink(destination: ReportView()) {
-                            Text("리포트로 이동하기")
+                        NavigationLink(destination: MainTabView()) {
+                             Text("리포트로 이동하기")
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                                 .padding()
                                 .frame(maxWidth: .infinity)
                                 .background(Color.white)
                                 .cornerRadius(10)
-                        }
+                         }
                         .standardPadding()
                     }
                 }
-                
                 Spacer()
             }
             .edgesIgnoringSafeArea(.all)
