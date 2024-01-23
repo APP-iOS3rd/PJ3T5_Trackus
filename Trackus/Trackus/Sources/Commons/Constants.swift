@@ -8,9 +8,12 @@
 import Foundation
 
 public enum Constants {
-    // 컨텐츠가 들어가는 뷰레이아웃 공통 상수
+    // 레이아웃 관련 공통 상수
     enum ViewLayoutConst {
         static let VIEW_STANDARD_INNER_SPACING: CGFloat = 20
         static let VIEW_STANDARD_CORNER_RADIUS: CGFloat = 14
+        static let VIEW_STANDARD_HORIZONTAL_SPACING: CGFloat = 20
+        static let VIEW_STANDARD_VERTICAL_SPACING: CGFloat = 20
+        static let VIEW_SPECIAL_SPACING: CGFloat = 32
     }
 }

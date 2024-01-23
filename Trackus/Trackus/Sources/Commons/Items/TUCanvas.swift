@@ -29,9 +29,6 @@ struct TUCanvas {
         var body: some View {
             // style별로 다른 캔버스를 나타냄
             switch style {
-            case .content:
-                content
-                    .modifier(TUCanvasModifier())
             case .background:
                 VStack {
                     ZStack {
@@ -42,6 +39,10 @@ struct TUCanvas {
                         }
                     }
                 }
+            case .content:
+                content
+                    .modifier(ContentModifier())
+           
             }
         }
         
