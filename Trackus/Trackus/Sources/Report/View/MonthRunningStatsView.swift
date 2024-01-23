@@ -13,16 +13,12 @@ struct MonthRunningStatsView: View {
     @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     
-//    let maxWidth: CGFloat = 400
-    let minFrameWidth: CGFloat = 315
+//    let minFrameWidth: CGFloat = 315
     
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        //        GeometryReader { geometry in
-//        ZStack (alignment: .top){
-            //                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
                 
@@ -69,15 +65,10 @@ struct MonthRunningStatsView: View {
                         .padding(.top)
                         
                         MonthLineView(value: calculateBarHeight(avgWeakData))
-                        //                                .frame(minWidth: minFrameWidth)
-                        //                                .frame(width: minFrameWidth)
                     }
                 }
                 .frame(height: 150) // 그래프 프레임
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: maxWidth)
                 
-                //                    ZStack {
                 VStack {
                     Text("박선구 님의 5월 러닝 속도 평균은 ") + // 이름, 선택한 월의 속도 평균
                     Text("10.5 km/h").foregroundColor(TUColor.sub) + // 선택한 월의 속도 평균
@@ -87,28 +78,16 @@ struct MonthRunningStatsView: View {
                     Text("23%").foregroundColor(TUColor.sub) + // 연령층의 상위 몇 퍼센트인지
                     Text(" 입니다.")
                 }
-                //                        .frame(width: 280)
-                //                        .frame(maxWidth: 280, minWidth: 250)
                 .frame(minWidth: 250, maxWidth: 280)
                 .padding(.horizontal)
                 .font(.body)
                 .frame(height: 103)
-                //                    .frame(minHeight: 103)
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-//                .padding(.top, 20)
                 .padding(.bottom, 10)
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: minFrameWidth)
             }
-            //                    .frame(minWidth: 150, maxWidth: 300)
-            //                }
-            //                .frame(height: 300)
-            //            }
-//        }
     }
-//    }
     
     func calculateBarHeight(_ weight: Double) -> Double { // ViewModel 로 빼기
         let normalizedHeight = (weight / limitValue) * Double(maxHeight)

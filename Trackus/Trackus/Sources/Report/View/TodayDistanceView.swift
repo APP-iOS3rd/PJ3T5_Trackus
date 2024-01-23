@@ -32,7 +32,6 @@ struct TodayDistanceView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(TUColor.main)
                         .padding(.vertical, 8)
-//                        .padding(.vertical)
                 
                 Text("동일 연령대의 TrackUs 회원 중 상위 33.2%(운동량 기준)") // 같은 나이대 중 상위 퍼센트
                         .font(.caption)
@@ -92,19 +91,11 @@ struct TodayDistanceView: View {
                             .foregroundColor(TUColor.main)
                         VStack {
                             // 사용자의 오늘 하루 러닝 속도
-//                            
-//                            TodaySpeedBar(value: calculateSpeedBarWidth(mySpeed[0].speed, data: [mySpeed[0]], limitValue: speedLimitValue), speedValue: mySpeed[0].speed)
-//                                .foregroundColor(TUColor.main)
-//                                .frame(maxWidth: .infinity)
-                            
-//                            TodaySpeedBar(value: calculateSpeedBarWidth(mySpeedValue: mySpeed[0].speed, ageSpeedValue: ageSpeed[0].speed, mySpeedData: [mySpeed[0]], ageSpeedData: [ageSpeed[0]], limitValue: speedLimitValue), speedValue: mySpeed[0].speed)
                             
                             TodaySpeedBar(value: calculateSpeedBarWidth(mySpeed[0].speed, data: [mySpeed[0]], limitValue: speedLimitValue), speedValue: mySpeed[0].speed)
                                 .foregroundColor(TUColor.main)
                             
                             // 같은 나이대의 오늘 하루 러닝 속도
-//                            TodaySpeedBar(value: calculateSpeedBarWidth(mySpeedValue: mySpeed[0].speed, ageSpeedValue: ageSpeed[0].speed, mySpeedData: [mySpeed[0]], ageSpeedData: [ageSpeed[0]], limitValue: speedLimitValue), speedValue: ageSpeed[0].speed)
-//                                .frame(maxWidth: .infinity)
                             
                             TodaySpeedBar(value: calculateSpeedBarWidth(ageSpeed[0].speed, data: [ageSpeed[0]], limitValue: speedLimitValue), speedValue: ageSpeed[0].speed)
                                 .foregroundColor(TUColor.sub)
@@ -158,57 +149,14 @@ struct TodayDistanceView: View {
         return min(normalizedWidth * scaleFactor, Double(maxWidth))
     }
     
-//    func calculateSpeedBarWidth(mySpeedValue: Double, ageSpeedValue: Double, mySpeedData: [TodaySpeedModel], ageSpeedData: [TodaySpeedModel], limitValue: Double) -> Double {
-//        let myNormalizedWidth = (mySpeedValue / limitValue) * Double(maxWidth)
-//        
-//        guard !mySpeedData.isEmpty else {
-//            return myNormalizedWidth
-//        }
-//        
-//        let myMaxNormalizedWidth = mySpeedData.map { $0.speed / limitValue * Double(maxWidth) }.max() ?? 0
-//        
-//        var myScaleFactor: Double = 1.0
-//        
-//        if myMaxNormalizedWidth > Double(maxWidth) {
-//            myScaleFactor = Double(maxWidth) / myMaxNormalizedWidth
-//        }
-//        
-//        let adjustedMyWidth = min(myNormalizedWidth * myScaleFactor, Double(maxWidth))
-//        
-//        // 이제 mySpeed를 기반으로 ageSpeed의 너비를 조정합니다.
-//        let ageNormalizedWidth = (ageSpeedValue / limitValue) * Double(maxWidth)
-//        
-//        guard !ageSpeedData.isEmpty else {
-//            return ageNormalizedWidth
-//        }
-//        
-//        let ageMaxNormalizedWidth = ageSpeedData.map { $0.speed / limitValue * Double(maxWidth) }.max() ?? 0
-//        
-//        var ageScaleFactor: Double = 1.0
-//        
-//        if ageMaxNormalizedWidth > Double(maxWidth) {
-//            ageScaleFactor = Double(maxWidth) / ageMaxNormalizedWidth
-//        }
-//        
-//        // mySpeed가 특정 한계를 초과하면 ageSpeed의 너비를 줄입니다.
-//        let adjustedAgeWidth = min(ageNormalizedWidth * ageScaleFactor, Double(maxWidth) - adjustedMyWidth)
-//        
-//        return adjustedAgeWidth
-//    }
-    
 }
 
 struct TodayDistanceBar: View {
     var value : Double
     var distanceValue: Double
-//    var isSelected : Bool
-    
-//    var selectedData: TodayDistanceModel?
     
     @State private var barWidth: CGFloat = 0 // 애니메이션을 위한
     @State private var firstTime: Bool = false
-    
-//    var selectedData: TodayDistanceModel?
     
     var body: some View {
         
@@ -237,7 +185,6 @@ struct TodayDistanceBar: View {
                     firstTime = true
                 }
             }
-//            .frame(maxWidth: .infinity)
         }
     }
 }
@@ -245,14 +192,9 @@ struct TodayDistanceBar: View {
 struct TodaySpeedBar: View {
     var value : Double
     var speedValue: Double
-//    var isSelected : Bool
-    
-//    var selectedData: TodayDistanceModel?
     
     @State private var barWidth: CGFloat = 0 // 애니메이션을 위한
     @State private var firstTime: Bool = false
-    
-//    var selectedData: TodaySpeedModel?
     
     var body: some View {
         
@@ -281,8 +223,6 @@ struct TodaySpeedBar: View {
                     firstTime = true
                 }
             }
-//            .frame(maxWidth: .infinity)
-                
         }
     }
 }

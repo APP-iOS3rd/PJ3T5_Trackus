@@ -13,16 +13,12 @@ struct YearRunningStatsView: View {
     @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     
-//    let maxWidth: CGFloat = 400
-    let minFrameWidth: CGFloat = 315
+//    let minFrameWidth: CGFloat = 315
     
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        //        GeometryReader { geometry in
-//        ZStack (alignment: .top){
-            //                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
                 
@@ -69,15 +65,10 @@ struct YearRunningStatsView: View {
                         //                        }
                         
                         YearLineView(value: calculateBarHeight(avgWeakData))
-                        //                                .frame(minWidth: minFrameWidth)
-                        //                                .frame(width: minFrameWidth)
                     }
                 }
                 .frame(height: 150) // 그래프 프레임
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: maxWidth)
                 
-                //                    ZStack {
                 VStack {
                     Text("박선구 님의 2024년 러닝 속도 평균은 ") + // 이름, 현재의 연도
                     Text("12.25 km/h").foregroundColor(TUColor.sub) + // 현재의 연도의 속도 평균
@@ -87,30 +78,16 @@ struct YearRunningStatsView: View {
                     Text("23%").foregroundColor(TUColor.sub) + // 상위 몇 퍼센트인지
                     Text(" 입니다.")
                 }
-                //                        .frame(width: 280)
                 .frame(minWidth: 250, maxWidth: 280)
                 .padding(.horizontal)
                 .font(.body)
-                //                .fontWeight(.bold)
                 .frame(height: 103)
-                //                    .frame(minHeight: 103)
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-//                .padding(.top, 20)
                 .padding(.bottom, 10)
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: minFrameWidth)
-                //                    }
-                //                    .frame(minWidth: 150, maxWidth: 300)
-                //                    .frame(width: maxWidth)
             }
-            //                .frame(height: 300)
-            //                .frame(width: 300)
-            //            }
-//        }
     }
-//    }
     
     func calculateBarHeight(_ weight: Double) -> Double {
         let normalizedHeight = (weight / limitValue) * Double(maxHeight)

@@ -18,7 +18,6 @@ enum chartTab: String, CaseIterable {
 struct StatsTabbedView: View {
     @State private var pickerSelectedItem = 0
     @State private var isPickerPresented = false
-//    @State var selectedAge = AvgAge.twenties // 사용자의 나이대
     @Binding var selectedAge : AvgAge
     @State var selection: String = "20대"
     
@@ -26,10 +25,8 @@ struct StatsTabbedView: View {
     @Namespace private var animation
     
     var body: some View {
-//        ZStack (alignment: .top) {
             TUCanvas.CustomCanvasView(style: .content) {
                 
-                //        }
                 ZStack (alignment: .top){
                     TUColor.box.edgesIgnoringSafeArea(.all)
                     
@@ -46,7 +43,6 @@ struct StatsTabbedView: View {
                                         .fontWeight(.semibold)
                                     
                                     Image(systemName: "chevron.down")
-                                    //                                .resizable()
                                         .frame(width: 10, height: 10)
                                 }
                                 .foregroundColor(TUColor.main)
@@ -65,20 +61,13 @@ struct StatsTabbedView: View {
                         }
                         .padding(.bottom)
                         
-                        //                    animate()
-                        //                        .padding(.horizontal, 60)
-                        
-                        //                Spacer()
-                        
                         selectView(selec: selectedPicker)
-//                            .border(Color.blue)
                     }
                     .frame(height: 400)
                     
                     animate()
                         .padding(.horizontal, 60)
                         .offset(y: +45)
-                    //                    .padding(.top)
                     
                 }
                 .sheet(isPresented: $isPickerPresented,onDismiss: {
@@ -88,9 +77,7 @@ struct StatsTabbedView: View {
                         .presentationDetents([.fraction(0.3), .large])
                         .presentationDragIndicator(.hidden)
                 })
-                
-                //            animate()
-                //                .padding(.horizontal, 60)
+
             }
         }
     
@@ -103,7 +90,6 @@ struct StatsTabbedView: View {
                         Capsule()
                             .foregroundColor(.gray)
                             .frame(height: 30)
-//                            .frame(width: 100, height: 30)
                             .matchedGeometryEffect(id: "일별", in: animation)
                     }
                     
@@ -112,7 +98,6 @@ struct StatsTabbedView: View {
                         .bold()
                         .frame(maxWidth: .infinity / 3)
                         .frame(height: 30)
-//                        .frame(width: 100, height: 30)
                         .foregroundColor(selectedPicker == item ? TUColor.main : .gray)
                 }
                 .onTapGesture {

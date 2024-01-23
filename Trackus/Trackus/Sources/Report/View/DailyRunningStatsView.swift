@@ -13,16 +13,12 @@ struct DailyRunningStatsView: View {
     @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     
-//    let maxWidth: CGFloat = 400
-    let minFrameWidth: CGFloat = 315
+//    let minFrameWidth: CGFloat = 315
     
     let maxHeight: CGFloat = 100 // 최대 그래프 높이
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        //        GeometryReader { geometry in
-//        ZStack (alignment: .top){
-            //                TUColor.box.edgesIgnoringSafeArea(.all) // 뷰의 전체 배경색
             
             VStack {
                 
@@ -69,17 +65,11 @@ struct DailyRunningStatsView: View {
                         .padding(.top)
                         
                         LineView(value: calculateBarHeight(avgWeakData))
-                        //                                .frame(minWidth: minFrameWidth)
-                        //                                .frame(width: minFrameWidth)
                     }
                 }
                 .frame(height: 150) // 그래프 프레임
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: maxWidth)
                 
-                //                    ZStack {
                 VStack {
-                    //                        VStack {
                     Text("박선구 님의 주간 러닝 속도 평균은 ") +  // 이름
                     Text("14.5 km/h").foregroundColor(TUColor.sub) + // 사용자 한 주의 평균 속도
                     Text("입니다. 20대 평균보다 ") + // 연령대
@@ -87,42 +77,18 @@ struct DailyRunningStatsView: View {
                     Text(" 빨리 달리고 있으며 상위 ") + // 연령대 평균이 사용자 평균 보다 높으면 빨리, 느리게
                     Text("23%").foregroundColor(TUColor.sub) + // 상위 몇 퍼센트 인지 ?
                     Text(" 입니다.")
-                    //                        }
-                    //                        .padding()
-                    //                            .lineLimit(3)
+                    
                 }
-                //                        .frame(width: 280)
                 .frame(minWidth: 250, maxWidth: 280)
                 .padding(.horizontal)
                 .font(.body)
                 .frame(height: 103)
-                //                    .frame(minHeight: 103)
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-//                .padding(.top, 20)
                 .padding(.bottom, 10)
-                //                    .frame(minWidth: minFrameWidth)
-                //                    .frame(width: minFrameWidth)
-                //                    }
-                //                    .frame(minWidth: 150, maxWidth: 300)
-                //                    .frame(width: maxWidth)
-                
-                //                    .padding(.horizontal)
-                //                    .font(.body)
-                //                    .frame(height: 103)
-                //                    .background(TUColor.subBox)
-                //                    .foregroundColor(TUColor.main)
-                //                    .cornerRadius(14)
-                //                    .padding(.top, 20)
-                //                    .frame(width: geometry.size.width)
             }
-            //                .frame(width: 300)
-            //                .frame(height: 300)
-            //            }
-//        }
     }
-//    }
     
     // 그래프의 높이를 계산 후, 한계값을 넘지 않게 제한하는 함수
     func calculateBarHeight(_ weight: Double) -> Double {

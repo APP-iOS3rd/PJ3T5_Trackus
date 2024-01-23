@@ -17,23 +17,17 @@ enum CircleTab: String, CaseIterable {
 struct DailyCircleTabView: View {
     @State private var selectedPicker: CircleTab = .day
     @Namespace private var animation
-//    @Binding var dailyCircleTabHeight: CGFloat
     
     var body: some View {
-//        TUCanvas.CustomCanvasView(style: .content, content: {
             VStack {
                 animate()
                     .padding(.horizontal, 50)
                     .padding(.bottom, 20)
-//                    .padding(30)
                 
                 Spacer()
                 
-//                GeometryReader { geometry in
-//                TabView {
                     CircleSelectView(selec: selectedPicker)
                         .frame(height: 350)
-//                }
                     .gesture(
                         DragGesture()
                             .onEnded{ gesture in
@@ -48,15 +42,7 @@ struct DailyCircleTabView: View {
                                 }
                             }
                     )
-//                    .cornerRadius(14)
-//                        .frame(width: geometry.size.width, height: geometry.size.height)
                 }
-//                .onPreferenceChange(HeightPreferenceKey.self) {
-//                    dailyCircleTabHeight = $0
-//                }
-//            }
-//            .padding(.vertical, -40)
-//        })
     }
     
     @ViewBuilder
@@ -102,22 +88,14 @@ struct CircleSelectView : View {
     var selec : CircleTab
     
     var body: some View {
-//        GeometryReader { geometry in
             switch selec {
             case .day:
                 MyStatsCircleView()
-//                    .transition(.rightSlide)
                     .transition(.leftSlide)
-//                    .transition(selec == .day ? .rightSlide : .leftSlide)
-//                    .frame(width: geometry.size.width, height: 400)
             case .month:
                 MyStatsOverviewView()
-//                    .transition(.leftSlide)
                     .transition(.rightSlide)
-//                    .transition(selec == .month ? .leftSlide : .rightSlide)
-//                    .frame(width: geometry.size.width, height: 400)
             }
-//        }
     }
 }
 

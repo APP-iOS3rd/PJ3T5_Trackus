@@ -40,7 +40,6 @@ struct MyStatsCircleView: View {
                 }
                 
                 Text("일일 목표까지 1.4km") // 일일 목표와 오늘 나의 거리의 차이
-//                    .padding()
                     .padding(.bottom, 50)
                     .foregroundColor(TUColor.main)
                     .fontWeight(.semibold)
@@ -49,8 +48,6 @@ struct MyStatsCircleView: View {
                 
                 // stats
                 HStack {
-                    
-//                    Spacer()
                     
                     VStack {
                         Image(systemName: "flame.fill")
@@ -79,18 +76,14 @@ struct MyStatsCircleView: View {
                             .resizable()
                             .frame(width: 20, height: 23)
                         Text("00:32")
-//                            .font(.body)
                             .fontWeight(.semibold)
                     }
                     .foregroundColor(TUColor.main)
-                    
-//                    Spacer()
                 }
                 .padding()
                 .background(TUColor.subBox)
                 .cornerRadius(14)
             }
-//            .frame(height: 400)
         }
     }
 }
@@ -104,7 +97,6 @@ struct CircularProgressView: View {
             // 원형 트랙
             Circle()
                 .stroke(Color.black, style: StrokeStyle(lineWidth: 12.0, lineCap: .round))
-//                .opacity(0.3)
 
             // 원형 그래프
             Circle()

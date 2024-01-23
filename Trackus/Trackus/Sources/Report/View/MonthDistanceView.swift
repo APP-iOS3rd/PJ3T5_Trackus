@@ -10,7 +10,6 @@ import SwiftUI
 // 나이대별 월 평균 운동량을 비교해주는 뷰
 
 struct MonthDistanceView: View {
-//    @State var avgWeakData : Double = 10 // 평균 값
     @State var selectedBarIndex: Int? = nil
     @Binding var selectedAge : AvgAge // 사용자의 나이대
     @State var isPickerPresented = false
@@ -19,7 +18,6 @@ struct MonthDistanceView: View {
     let limitValue: Double = 20.0 // 높이 한계 값
     
     var body: some View {
-        //        ZStack(alignment: .top) {
         TUCanvas.CustomCanvasView(style: .content) {
             
             
@@ -39,13 +37,11 @@ struct MonthDistanceView: View {
                                     .fontWeight(.semibold)
                                 
                                 Image(systemName: "chevron.down")
-                                //                                .resizable()
                                     .frame(width: 10, height: 10)
                             }
                             .foregroundColor(TUColor.main)
                             
                         })
-                        //                    .padding(.top, 4)
                         .padding(6)
                         .background(TUColor.subBox)
                         .cornerRadius(10)
@@ -58,7 +54,6 @@ struct MonthDistanceView: View {
                         
                         Spacer()
                     }
-//                    .padding(.bottom)
                     
                     
                     Spacer() // 공간 확보
@@ -86,7 +81,6 @@ struct MonthDistanceView: View {
                             }
                         }
                         .foregroundColor(TUColor.main)
-//                        .padding(.top)
                     }
                     VStack {
                         ZStack {
@@ -111,8 +105,7 @@ struct MonthDistanceView: View {
                                             .foregroundColor(TUColor.sub.opacity(0.8))
                                             .cornerRadius(14)
                                             .offset(y: +2)
-                                        
-//                                        KMLineView(value: calculateBarHeight(data.avg) + 10)
+                                
                                     }
                                 }
                             }
@@ -129,12 +122,10 @@ struct MonthDistanceView: View {
                         .frame(minWidth: 250, maxWidth: 280)
                         .padding(.horizontal)
                         .font(.body)
-                        //                    .fontWeight(.bold)
                         .frame(height: 103)
                         .background(TUColor.subBox)
                         .foregroundColor(TUColor.main)
                         .cornerRadius(14)
-//                        .padding(.top, 20)
                         .padding(.bottom, 10)
                         
                         
@@ -227,9 +218,7 @@ struct KMLineView: View {
                     
                     Rectangle()
                         .frame(height: value)
-//                        .foregroundColor(TUColor.sub.opacity(0.8))
                         .cornerRadius(14)
-//                        .background(.regularMaterial)
                     Spacer()
                 }
                 .frame(height: value)
