@@ -1,10 +1,9 @@
 //
-//  chartYouTube.swift
-//  ChartPrac
+//  SwiftUIView.swift
+//  Trackus
 //
-//  Created by 박선구 on 1/19/24.
+//  Created by 박선구 on 1/23/24.
 //
-
 import SwiftUI
 
 // 주 평균 러닝속도 차트 뷰

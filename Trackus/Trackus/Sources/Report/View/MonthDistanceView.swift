@@ -1,8 +1,8 @@
 //
-//  ReportChartkm.swift
-//  ChartPrac
+//  SwiftUIView.swift
+//  Trackus
 //
-//  Created by 박선구 on 1/20/24.
+//  Created by 박선구 on 1/23/24.
 //
 
 import SwiftUI
@@ -252,16 +252,6 @@ var kmData: [MonthModel] = [
     MonthModel(day: "Nov", weight: 2.0, avg: 4.5),
     MonthModel(day: "Dec", weight: 0.0, avg: 5.5)
 ]
-
-enum AvgAge: String, CaseIterable, Identifiable { // 나이대 피커
-    case teens = "10대"
-    case twenties = "20대"
-    case thirties = "30대"
-    case forties = "40대"
-    case fifties = "50대"
-    
-    var id: Self { self }
-}
 
 //#Preview {
 //    MonthDistanceView(selectedAge: AvgAge.teens)

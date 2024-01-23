@@ -13,7 +13,7 @@ struct RunningView: View {
         NavigationView {
             TUCanvas.CustomCanvasView {
                 VStack {
-                    HStack {
+//                    HStack {
 //                        Text("러닝")
 //                            .font(.title)
 //                            .fontWeight(.bold)
@@ -54,7 +54,7 @@ struct RunningView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                         }
-                    }
+//                    }
                     .standardPadding()
                     
                     Spacer()

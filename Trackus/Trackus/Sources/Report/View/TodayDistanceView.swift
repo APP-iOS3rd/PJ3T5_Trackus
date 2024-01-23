@@ -1,8 +1,8 @@
 //
-//  TodayDistanceView.swift
+//  SwiftUIView.swift
 //  Trackus
 //
-//  Created by 박선구 on 1/22/24.
+//  Created by 박선구 on 1/23/24.
 //
 
 import SwiftUI
@@ -144,7 +144,7 @@ struct TodayDistanceView: View {
         if maxNormalizedWidth > Double(maxWidth) {
             scaleFactor = Double(maxWidth) / maxNormalizedWidth
         }
-//        
+//
 //        let scaleFactor = maxNormalizedWidth > limitValue ? limitValue / maxNormalizedWidth : 1.0
         return min(normalizedWidth * scaleFactor, Double(maxWidth))
     }
