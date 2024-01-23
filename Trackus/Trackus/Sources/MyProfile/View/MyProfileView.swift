@@ -12,26 +12,6 @@ struct MyProfileView: View {
 
         var body: some View {
             TUCanvas.CustomCanvasView(style: .background) {
-//                NavigationView {
-//                    VStack {
-//                        HStack {
-//                            MyTypography.subtitle(text: "마이페이지")
-//                                .frame(maxWidth: .infinity, alignment: .center)
-//                                .padding()
-//
-//                            Spacer()
-//
-//                            Image(systemName: "gear")
-//                                .font(.system(size: 20))
-//                                .padding()
-//                                .onTapGesture {
-//                                    viewModel.settingsButtonTapped()
-//                                }
-//                                .background(NavigationLink("", destination: SettingsView(), isActive: $viewModel.isSettingsActive))
-//                        }
-//                    .foregroundColor(TUColor.main)
-//                    .background(TUColor.background)
-
                     // 프로필 정보
                     ProfileInfo()
                     Spacer()
@@ -94,16 +74,14 @@ struct MyProfileView: View {
                 }
                 .foregroundColor(TUColor.main)
                 .background(TUColor.background)
-                .navigationBarHidden(true)
 
                 // SettingsView가 나타날 때마다 설정 활성화 초기화
                 .onAppear {
                     viewModel.isSettingsActive = false
-                }
             }
         }
-//    }
-//}
+    
+}
 
     
 class NavigationManager: ObservableObject {
