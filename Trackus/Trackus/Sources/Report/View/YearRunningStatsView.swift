@@ -85,7 +85,7 @@ struct YearRunningStatsView: View {
                 .background(TUColor.subBox)
                 .foregroundColor(TUColor.main)
                 .cornerRadius(14)
-                .padding(.bottom, 10)
+//                .padding(.bottom, 10)
             }
     }
     
@@ -142,7 +142,7 @@ struct YearBarView: View {
                 }
                 
                 Text(day ?? "Day")
-                    .foregroundStyle(.gray)
+                    .foregroundColor(.gray)
                     .font(.caption2)
             }
     }

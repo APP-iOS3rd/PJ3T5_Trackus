@@ -45,6 +45,7 @@
 		611744992B5FB19F0012941C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 611744982B5FB19F0012941C /* FirebaseStorageCombine-Community */; };
 		61A43EFD2B5FB23F00732E30 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFC2B5FB23F00732E30 /* MapboxMaps */; };
 		61A43F002B5FB26800732E30 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 61A43EFF2B5FB26800732E30 /* PopupView */; };
+		61B8F91C2B600EC300A0A89D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */; };
 		61F117DD2B56F275003761C1 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117DC2B56F275003761C1 /* MyProfileView.swift */; };
 		61F117E12B56F291003761C1 /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E02B56F291003761C1 /* RunningView.swift */; };
 		61F117E32B56F29A003761C1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F117E22B56F29A003761C1 /* LoginView.swift */; };
@@ -104,6 +105,7 @@
 		61108E0D2B5FB5A100F5B915 /* MyStatsCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsCircleView.swift; sourceTree = "<group>"; };
 		61108E0F2B5FB5E200F5B915 /* MonthDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDistanceView.swift; sourceTree = "<group>"; };
 		61108E112B5FB62F00F5B915 /* MyStatsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStatsOverviewView.swift; sourceTree = "<group>"; };
+		61B8F91B2B600EC300A0A89D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61F117DC2B56F275003761C1 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		61F117E02B56F291003761C1 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		61F117E22B56F29A003761C1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -745,7 +747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;
@@ -776,7 +778,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = P4D4ZQC4YF;
+				DEVELOPMENT_TEAM = Y6QXM3Q994;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;

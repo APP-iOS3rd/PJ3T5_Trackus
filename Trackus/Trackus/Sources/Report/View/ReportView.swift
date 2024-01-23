@@ -19,13 +19,13 @@ struct ReportView: View {
                             HStack {
                                 VStack(alignment: .leading) {
                                     Text("상세한 러닝 리포트")
-                                        .foregroundStyle(TUColor.main)
+                                        .foregroundColor(TUColor.main)
                                         .fontWeight(.bold)
                                         .padding(.bottom)
                                     
                                     Text("TrackUs Pro 회원은 상세한 러닝 리포트를 제공받고 효율적인 러닝이 가능합니다.")
                                         .padding(.trailing, 70)
-                                        .foregroundStyle(.gray)
+                                        .foregroundColor(.gray)
                                         .font(.footnote)
                                 }
                                 
@@ -45,9 +45,9 @@ struct ReportView: View {
                         VStack (alignment: .leading){
                             Text("기간별 운동 정보")
                                 .font(.title2)
-                                .foregroundStyle(TUColor.main)
+                                .foregroundColor(TUColor.main)
                             Text("러닝 데이터를 기반으로 통계를 확인합니다.")
-                                .foregroundStyle(.gray)
+                                .foregroundColor(.gray)
                                 .font(.footnote)
                         }
                         .padding(.vertical)
@@ -73,12 +73,15 @@ struct ReportView: View {
                         TodayDistanceView()
                             .padding(.bottom)
                         
+                        TUCanvas.CustomCanvasView(style: .content, content: {
                             TabView {
                                 MonthDistanceView(selectedAge: $selectedAge)
                                 StatsTabbedView(selectedAge: $selectedAge)
                             }
                             .frame(height: 450)
                             .tabViewStyle(.page(indexDisplayMode: .always))
+                            .padding(.bottom, -20)
+                        })
                         
                         Divider()
                         

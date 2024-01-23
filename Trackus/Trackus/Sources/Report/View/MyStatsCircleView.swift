@@ -91,6 +91,7 @@ struct MyStatsCircleView: View {
 
 struct CircularProgressView: View {
     var progress: CGFloat
+    @State private var animatedProgress: CGFloat = 0.0 // 애니메이션을 위한
 
     var body: some View {
         ZStack {
@@ -100,9 +101,16 @@ struct CircularProgressView: View {
 
             // 원형 그래프
             Circle()
-                .trim(from: 0.0, to: progress)
+                .trim(from: 0.0, to: animatedProgress)
                 .stroke(TUColor.main, style: StrokeStyle(lineWidth: 13.0, lineCap: .round))
                 .rotationEffect(Angle(degrees: -90))
+                .onAppear {
+                    // 애니메이션 적용
+                    
+                    withAnimation(.easeInOut(duration: 0.65)) {
+                        animatedProgress = progress
+                    }
+                }
         }
     }
 }
