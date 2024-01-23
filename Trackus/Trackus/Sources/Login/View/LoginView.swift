@@ -11,9 +11,6 @@ struct LoginView: View {
     @EnvironmentObject var viewModel: LoginViewModel
     @Environment(\.dismiss) var dismiss
     
-    @State var check: Bool = true
-    
-    
     private func signInWithGoogle() {
         Task {
             if await viewModel.signInWithGoogle() == true {

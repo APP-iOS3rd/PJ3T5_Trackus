@@ -7,38 +7,17 @@
 
 import SwiftUI
 import PhotosUI
-import Firebase
-import FirebaseStorage
-
-
-class FirebaseManger: NSObject {
-    let auth: Auth
-    let storage: Storage
-    let firestore: Firestore
-    var flow: SignUpFlow = .nickname
-    
-    static let shared = FirebaseManger()
-    
-    override init() {
-        self.auth = Auth.auth()
-        self.storage = Storage.storage()
-        self.firestore = Firestore.firestore()
-        
-        super.init()
-    }
-}
-
+import Combine
 
 struct SignUpView: View {
-    @StateObject private var viewModel = SignUpViewModel()
+    @EnvironmentObject var viewModel: LoginViewModel
     //@Environment(\.dismiss) var dismiss
     
     var body: some View {
         TUCanvas.CustomCanvasView {
             switch viewModel.flow {
             case .nickname:
-                AgeGenderView()
-                //NickNameView()
+                NickNameView()
                     .environmentObject(viewModel)
             case .image:
                 ImageView()
@@ -91,13 +70,13 @@ struct Description: View {
 
 // MARK: - 닉네임 입력
 struct NickNameView: View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     @State private var check = false
     var body: some View {
         VStack{
             Description(image: Image(systemName: "person.circle"),title: "닉네임 입력", description: "다른 러너들에게 자신을 잘 나타낼 수 있는 닉네임을 입력해주세요!")
             
-            TUTextField(placeholder: "닉네임", text: $viewModel.user.username, availability: $check)
+            TUTextField(placeholder: "닉네임", text: $viewModel.userInfo.username, availability: $check)
                 .padding(.top, 40)
             
             Spacer()
@@ -111,7 +90,7 @@ struct NickNameView: View {
 
 // MARK: - 프로필 사진 선택
 struct ImageView:View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     @State private var isImagePickerPresented: Bool = false
     @State private var selectedPhoto: PhotosPickerItem?
     @State private var image: Image?
@@ -124,7 +103,7 @@ struct ImageView:View {
                 VStack {
                     Button(action: {
                         // 입력값 nil 처리 -> flow 다음차례
-                        viewModel.user.profileImageUrl = nil
+                        viewModel.userInfo.profileImageUrl = nil
                         viewModel.flow = .physical
                     }, label: {
                         MyTypography.bodytitle(text: "건너뛰기")
@@ -191,6 +170,7 @@ struct ImageView:View {
                 
                 Spacer()
                 TUButton(active: image != nil, buttonText: "다음으로") {
+                    viewModel.persistImageToStorage(image: image)
                     viewModel.flow = .physical
                 }
             }
@@ -200,7 +180,7 @@ struct ImageView:View {
 
 // MARK: - 신체 정보 입력 View
 struct PhysicalView: View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     @State private var isHeightPickerPresented = false
     @State private var isWeightPickerPresented = false
     @State private var height: Int = 170
@@ -217,8 +197,8 @@ struct PhysicalView: View {
                 VStack {
                     Button(action: {
                         // 입력값 nil 처리 -> flow 다음차례
-                        viewModel.user.height = nil
-                        viewModel.user.weight = nil
+                        viewModel.userInfo.height = nil
+                        viewModel.userInfo.weight = nil
                         viewModel.flow = .ageGender
                     }, label: {
                         MyTypography.bodytitle(text: "건너뛰기")
@@ -234,7 +214,7 @@ struct PhysicalView: View {
                             .frame(width: 50)
                             
                         BoxModifier{
-                            if let height = viewModel.user.height {
+                            if let height = viewModel.userInfo.height {
                                 Text("\(height)")
                             }else{
                                 Text("-")
@@ -247,7 +227,7 @@ struct PhysicalView: View {
                             PickerSheet(title: "키", unit: "cm",values: heights, selectedValue: $height)
                         }
                         .onChange(of: height) { setHeight in
-                            viewModel.user.height = setHeight
+                            viewModel.userInfo.height = setHeight
                         }
                         MyTypography.bodytitle(text: "cm")
                             .frame(width: 50)
@@ -260,7 +240,7 @@ struct PhysicalView: View {
                         MyTypography.bodytitle(text: "몸무게")
                             .frame(width: 50)
                         BoxModifier{
-                            if let weight = viewModel.user.weight {
+                            if let weight = viewModel.userInfo.weight {
                                 Text("\(weight)")
                             }else{
                                 Text("-")
@@ -273,7 +253,7 @@ struct PhysicalView: View {
                             PickerSheet(title: "몸무게", unit: "kg",values: weights, selectedValue: $weight)
                         }
                         .onChange(of: weight) { setWeight in
-                            viewModel.user.weight = setWeight
+                            viewModel.userInfo.weight = setWeight
                         }
                         MyTypography.bodytitle(text: "kg")
                             .frame(width: 50)
@@ -283,7 +263,7 @@ struct PhysicalView: View {
                 .padding(.top, 40)
                 
                 Spacer()
-                TUButton(active: viewModel.user.height != nil && viewModel.user.weight != nil, buttonText: "다음으로") {
+                TUButton(active: viewModel.userInfo.height != nil && viewModel.userInfo.weight != nil, buttonText: "다음으로") {
                     viewModel.flow = .ageGender
                     
                 }
@@ -296,7 +276,7 @@ struct PhysicalView: View {
 // MARK: - 연령대 및 신채정보 View
 
 struct AgeGenderView: View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     private let nextflow: SignUpFlow = .runningStyle
     private let image = Image(.genderMark)
     private let title = "연령대 및 성별"
@@ -329,7 +309,7 @@ struct AgeGenderView: View {
                             .frame(width: 50)
                         
                         BoxModifier{
-                            if let age = viewModel.user.age {
+                            if let age = viewModel.userInfo.age {
                                 Text("\(age)")
                             }else{
                                 Text("-")
@@ -342,7 +322,7 @@ struct AgeGenderView: View {
                             PickerSheet(title: "연령대", unit: "0 대",values: ages, selectedValue: $age)
                         }
                         .onChange(of: age) { setAge in
-                            viewModel.user.age = setAge * 10
+                            viewModel.userInfo.age = setAge * 10
                         }
                         MyTypography.bodytitle(text: "대")
                             .frame(width: 50)
@@ -378,8 +358,8 @@ struct AgeGenderView: View {
                 }
                 .padding(.top, 40)
                 Spacer()
-                TUButton(active: viewModel.user.age != nil && gender != nil, buttonText: "다음으로") {
-                    viewModel.user.gender = gender
+                TUButton(active: viewModel.userInfo.age != nil && gender != nil, buttonText: "다음으로") {
+                    viewModel.userInfo.gender = gender
                     viewModel.flow = .runningStyle
                 }
             }
@@ -391,7 +371,7 @@ struct AgeGenderView: View {
 // MARK: - 러닝 스타일 View
 
 struct RunningStyleView: View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     private let nextflow: SignUpFlow = .daily
     private let image = Image(.runMark)
     private let title = "러닝 스타일"
@@ -469,14 +449,17 @@ struct RunningStyleView: View {
 // MARK: - 일일 목표량 View
 
 struct DailyGoalView: View {
-    @EnvironmentObject var viewModel: SignUpViewModel
+    @EnvironmentObject var viewModel: LoginViewModel
     private let nextflow: SignUpFlow = .runningStyle
     private let image = Image(.calendarMark)
     private let title = "일일 운동량"
     private let description = "하루에 정해진 운동량을 설정하고 꾸준히 뛸 수 있는 이유를 만들어 주세요."
     
     @State private var isProfilePublic: Bool = false
-    @State private var setDailyGoal: String = ""
+    @State private var setDailyGoal: Double?
+    @State private var setDailyGoalString: String = ""
+    
+    @State private var inputError: String = ""
     
     var body: some View {
         ZStack{
@@ -494,18 +477,23 @@ struct DailyGoalView: View {
             VStack{
                 Description(image: image, title: title, description: description)
                 HStack{
-                    
                     MyTypography.bodytitle(text: "거리")
                         .frame(width: 50)
                     BoxModifier(){
-                        TextField("일일 목표", text: $setDailyGoal)
-                            .keyboardType(.numberPad)
+                        TextField("일일 목표", text: $setDailyGoalString)
+                            .keyboardType(.decimalPad)
+                            // 숫자, . 만 입력
+                            .onReceive(Just(setDailyGoalString)) { newValue in
+                                let filtered = newValue.filter { "0123456789.".contains($0)}
+                                if filtered != newValue {
+                                    self.setDailyGoalString = filtered
+                                }
+                            }
                     }
                     MyTypography.bodytitle(text: "km")
                         .frame(width: 50)
                 }
                 .padding(.top, 40)
-                
                 Spacer()
                 HStack{
                     MyTypography.body(text: "사용자 프로필 공개 여부")
@@ -518,9 +506,11 @@ struct DailyGoalView: View {
                     self.isProfilePublic.toggle()
                 }
                 .animation(.easeInOut(duration: 0.2), value: isProfilePublic)
-                TUButton(active: viewModel.user.age != nil && viewModel.user.gender != nil, buttonText: "다음으로") {
-                    // 러닝스타일 추가하면 추가로 작서
-                    viewModel.flow = .daily
+                TUButton(active: !setDailyGoalString.isEmpty || isProfilePublic != false, buttonText: "완료") {
+                    viewModel.userInfo.setDailyGoal = Double(setDailyGoalString)
+                    viewModel.userInfo.isProfilePublic = isProfilePublic
+                    viewModel.storeUserInformation()
+                    viewModel.authenticationState = .authenticated
                 }
             }
         }

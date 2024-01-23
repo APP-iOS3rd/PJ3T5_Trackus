@@ -19,15 +19,6 @@ struct MyProfileView: View {
     }
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
-        Button(action: {viewModel.signOut()}, label: {
-            Text("로그아웃")
-                .foregroundStyle(.black)
-        })
-        Button(action: {deleteAccount()}, label: {
-            Text("탈퇴하기")
-                .foregroundStyle(.red)
-        })
     }
 }
     
