@@ -9,9 +9,26 @@ import SwiftUI
 
 struct MainTabView: View {
     @State var selectedIndex = 0
-
+    
     init() {
-        UITabBar.appearance().backgroundColor = TUColor.tab
+        let appearance: UITabBarAppearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = TUColor.tab
+        appearance.shadowColor = TUColor.tab
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
+    var tabTitle: String {
+        switch selectedIndex {
+        case 0: return "러닝"
+        case 1: return "리포트"
+        case 2: return "프로필"
+        default: return ""
+        }
     }
     
     var body: some View {
@@ -24,12 +41,14 @@ struct MainTabView: View {
                     }
                     .tag(0)
                 
+                
                 ReportView()
                     .tabItem {
                         Image(systemName: "chart.bar")
                         Text("리포트")
                     }
                     .tag(1)
+                
                 
                 MyProfileView()
                     .tabItem {
@@ -38,9 +57,11 @@ struct MainTabView: View {
                     }
                     .tag(2)
             }
+            .navigationTitle(tabTitle)
+            .navigationBarTitleDisplayMode(.inline)
             .accentColor(TUColor.main)
-            
         }
+        
     }
 }
 

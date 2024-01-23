@@ -65,6 +65,7 @@
 		82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */; };
 		82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */; };
 		82D0BCB82B5D63AA006A66B3 /* LiveRecordedRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */; };
+		82F9D3872B5FF6BC00A8CD40 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82F9D3862B5FF6BC00A8CD40 /* GoogleService-Info.plist */; };
 		9630DBB22B5A137C00727635 /* TUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBB12B5A137C00727635 /* TUColor.swift */; };
 		9630DBD42B5D1C2D00727635 /* MyProfileChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBD32B5D1C2D00727635 /* MyProfileChangeView.swift */; };
 		9630DBDC2B5D7F9500727635 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDB2B5D7F9500727635 /* SettingsView.swift */; };
@@ -127,6 +128,7 @@
 		82C1C6032B56E6AA00EBDAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C1C6062B56E6AA00EBDAEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82D0BCB72B5D63AA006A66B3 /* LiveRecordedRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRecordedRunningView.swift; sourceTree = "<group>"; };
+		82F9D3862B5FF6BC00A8CD40 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9630DBB12B5A137C00727635 /* TUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUColor.swift; sourceTree = "<group>"; };
 		9630DBD32B5D1C2D00727635 /* MyProfileChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileChangeView.swift; sourceTree = "<group>"; };
 		9630DBDB2B5D7F9500727635 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -143,7 +145,6 @@
 		986965BC2B5FD8C900EA9746 /* PickerSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSheet.swift; sourceTree = "<group>"; };
 		986965C42B5FD9C100EA9746 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		986965C62B5FDA0300EA9746 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		986966862B5FEFD900EA9746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../project/추가 프로젝트/PJ3T5_Trackus/Trackus/Trackus/Info.plist"; sourceTree = "<group>"; };
 		986966872B5FF04F00EA9746 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		986966892B5FF0B500EA9746 /* CountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountView.swift; sourceTree = "<group>"; };
 		9869668B2B5FF0E700EA9746 /* RunningRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningRecordView.swift; sourceTree = "<group>"; };
@@ -430,7 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				986965C62B5FDA0300EA9746 /* GoogleService-Info.plist */,
-				986966862B5FEFD900EA9746 /* Info.plist */,
+				82F9D3862B5FF6BC00A8CD40 /* GoogleService-Info.plist */,
 				61F117C52B56EE5C003761C1 /* Resources */,
 				61F117C42B56EDD9003761C1 /* Sources */,
 			);
@@ -551,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C1C6072B56E6AA00EBDAEE /* Preview Assets.xcassets in Resources */,
+				82F9D3872B5FF6BC00A8CD40 /* GoogleService-Info.plist in Resources */,
 				986965C72B5FDA0300EA9746 /* GoogleService-Info.plist in Resources */,
 				82C1C6042B56E6AA00EBDAEE /* Assets.xcassets in Resources */,
 			);
@@ -747,7 +749,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 4N3558QY8F;
+				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;
@@ -778,7 +780,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trackus/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 4N3558QY8F;
+				DEVELOPMENT_TEAM = P4D4ZQC4YF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trackus/Info.plist;
