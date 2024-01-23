@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TUColor {
     static let main = Color(hex: 0xFFFFFF)
-    static let sub = Color(hex: 0x2D4AE3)
+    static let sub = Color(hex: 0x999999)
     static let box = Color(hex: 0x212121)
     static let border = Color(hex: 0x969696)
     static let background = Color(hex: 0x111111)

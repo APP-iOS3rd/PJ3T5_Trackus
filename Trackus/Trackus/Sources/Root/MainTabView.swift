@@ -10,17 +10,15 @@ import SwiftUI
 struct MainTabView: View {
     @EnvironmentObject var viewModel: LoginViewModel
     @State var selectedIndex = 0
-    
+
     init() {
         UITabBar.appearance().backgroundColor = TUColor.tab
     }
+    
     var body: some View {
         NavigationStack {
             TabView(selection: $selectedIndex) {
                 RunningView()
-                    .onTapGesture {
-                        selectedIndex = 0
-                    }
                     .tabItem {
                         Image("run-icon").renderingMode(.template)
                         Text("러닝")
@@ -28,23 +26,18 @@ struct MainTabView: View {
                     .tag(0)
                 
                 ReportView()
-                    .onTapGesture {
-                        selectedIndex = 1
-                    }
                     .tabItem {
                         Image(systemName: "chart.bar")
                         Text("리포트")
-                    }.tag(1)
+                    }
+                    .tag(1)
                 
                 MyProfileView()
-                    .environmentObject(viewModel)
-                    .onTapGesture {
-                        selectedIndex = 2
-                    }
                     .tabItem {
                         Image(systemName: "person.crop.circle")
                         Text("프로필")
-                    }.tag(2)
+                    }
+                    .tag(2)
             }
             .accentColor(TUColor.main)
             
@@ -55,3 +48,4 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
 }
+
