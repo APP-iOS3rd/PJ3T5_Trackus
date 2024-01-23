@@ -1,18 +1,39 @@
 //
-//  SwiftUIView.swift
+//  BottomSheet.swift
 //  Trackus
 //
-//  Created by 최주원 on 1/23/24.
+//  Created by SeokKi Kwon on 2024/01/21.
 //
 
 import SwiftUI
 
-struct SwiftUIView: View {
+/**
+ 러닝 상태를 보여주는 전용 sheet
+ */
+struct BottomSheet<Content: View>: View {
+    @Binding var isFullScreen: Bool
+    let content: Content
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .bottom) {
+            VStack {
+                content
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: isFullScreen ? UIScreen.screenHeight - 60 : UIScreen.screenHeight * 0.65)
+            .background(TUColor.background)
+            .cornerRadius(Constants.ViewLayoutConst.VIEW_STANDARD_CORNER_RADIUS)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .ignoresSafeArea()
+    }
+    
+    init(isFullScreen: Binding<Bool>, content: () -> Content) {
+        self._isFullScreen = isFullScreen
+        self.content = content()
     }
 }
 
-#Preview {
-    SwiftUIView()
-}
+//#Preview {
+//    BottomSheet(isFullScreen: .constant(false))
+//}

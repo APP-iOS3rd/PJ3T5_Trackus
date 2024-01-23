@@ -2,17 +2,18 @@
 //  Constants.swift
 //  Trackus
 //
-//  Created by 최주원 on 1/23/24.
+//  Created by SeokKi Kwon on 2024/01/19.
 //
 
-import SwiftUI
+import Foundation
 
-struct Constants: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+public enum Constants {
+    // 레이아웃 관련 공통 상수
+    enum ViewLayoutConst {
+        static let VIEW_STANDARD_INNER_SPACING: CGFloat = 20
+        static let VIEW_STANDARD_CORNER_RADIUS: CGFloat = 14
+        static let VIEW_STANDARD_HORIZONTAL_SPACING: CGFloat = 20
+        static let VIEW_STANDARD_VERTICAL_SPACING: CGFloat = 20
+        static let VIEW_SPECIAL_SPACING: CGFloat = 32
     }
-}
-
-#Preview {
-    Constants()
 }
